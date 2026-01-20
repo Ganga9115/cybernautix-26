@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage({ onNavigate }) {
   const [langIndex, setLangIndex] = useState(0);
-
+ const navigate = useNavigate();
   const languages = [
     { lang: 'ENGLISH', text: 'RMK Engineering College Department of Information Technology Presents CYBERNAUTICS 2026' },
     { lang: 'தமிழ்', text: 'RMK பொறியியல் கல்லூரி தகவல் தொழில்நுட்ப துறை வழங்குகிறது CYBERNAUTICS 2026' },
@@ -104,11 +105,13 @@ export default function HomePage({ onNavigate }) {
 
           {/* Buttons */}
           <div className="fade-in flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-400/50 transition transform hover:scale-105">
+            <button className="px-8 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-400/50 transition transform hover:scale-105"
+            
+             onClick={() => navigate("/events")}>
               REGISTER
             </button>
             <button
-              onClick={() => onNavigate('norms')}
+             onClick={() => navigate("/general-norms")}
               className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-purple-400/50 transition transform hover:scale-105"
             >
               GENERAL NORMS
