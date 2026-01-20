@@ -1,20 +1,28 @@
+import React, { useState, useEffect } from 'react';
+import LoadingPage from './components/LoagingPage';
+import HomePage from './components/HomePage';
+import GeneralNormsPage from './components/GeneralNormsPage';
 export default function App() {
+  const [showLoading, setShowLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState('home');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(false);
+    }, 10000); // 10 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center">
-      <div className="bg-white p-10 rounded-2xl shadow-2xl text-center space-y-4">
-        <h1 className="text-4xl font-bold text-indigo-600">
-          Tailwind CSS Working 🎉
-        </h1>
-
-        <p className="text-gray-600">
-          If you see colors, spacing, and styles applied,
-          Tailwind CSS v3 is successfully installed.
-        </p>
-
-        <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
-          Test Button
-        </button>
-      </div>
+    <div>
+      {showLoading ? (
+        <LoadingPage />
+      ) : currentPage === 'home' ? (
+        <HomePage onNavigate={setCurrentPage} />
+      ) : (
+        <GeneralNormsPage onNavigate={setCurrentPage} />
+      )}
     </div>
   );
 }
