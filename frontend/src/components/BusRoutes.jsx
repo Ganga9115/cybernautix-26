@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, MapPin, Clock } from 'lucide-react';
 
-export default function BusRoutesPage({ onNavigate }) {
+export default function BusRoutesPage() {
   const [expandedRoute, setExpandedRoute] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 

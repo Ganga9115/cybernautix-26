@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
-export default function GeneralNormsPage({ onNavigate }) {
+export default function GeneralNormsPage() {
   const [expandedEvent, setExpandedEvent] = useState(null);
  const navigate = useNavigate();
   const rules = [
