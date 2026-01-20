@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 export default function GeneralNormsPage({ onNavigate }) {
   const [expandedEvent, setExpandedEvent] = useState(null);
-
+ const navigate = useNavigate();
   const rules = [
     'Please read all rules carefully before proceeding',
     'Students must bring their respective college ID card.',
@@ -74,7 +75,7 @@ export default function GeneralNormsPage({ onNavigate }) {
       <div className="sticky top-0 z-40 bg-black/80 backdrop-blur border-b border-cyan-400/30">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <button
-            onClick={() => onNavigate('home')}
+            onClick={() => navigate("/")}
             className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition"
           >
             <ChevronLeft size={24} />
