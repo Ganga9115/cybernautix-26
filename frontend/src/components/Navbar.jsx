@@ -14,6 +14,15 @@ const fields = [
   { label: "Subject", name: "subject", type: "text", placeholder: "Subject", rows: null },
   { label: "Message", name: "message", type: "textarea", placeholder: "Your message...", rows: 5 },
 ]
+  // Navbar items
+  const items = [
+    { label: "Home", href: "/", onClick: () => navigate("/") },
+    { label: "Events", href: "/events", onClick: () => navigate("/events") },
+    { label: "Rules", href: "/rules", onClick: () => navigate("/rules") },
+    { label: "Bus Route", href: "/bus", onClick: () => navigate("/bus") },
+    { label: "Timeline", href: "/timeline", onClick: () => navigate("/timeline") },
+    { label: "Contact", href: "/contact", onClick: () => navigate("/contact") }
+  ];
 
 const GradientBorderInput = ({ label, name, type, value, placeholder, rows, onChange }) => {
   const commonClasses = "w-full bg-transparent border-0 rounded-2xl px-6 py-3 text-white placeholder-cyan-300/40 focus:outline-none"
