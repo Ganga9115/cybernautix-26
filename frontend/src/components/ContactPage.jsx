@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
-export default function ContactPage() {
+export default function ContactPage({ onNavigate }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,24 +60,11 @@ export default function ContactPage() {
         <div id="stars3"></div>
       </div>
 
-      <div className="sticky top-0 z-40 bg-bg-secondary/10 backdrop-blur-sm border-b border-cyan-400/30">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-          <button
-            onClick={() => navigate("/")}
-            className="text-cyan-400 hover:text-cyan-300 transition font-semibold"
-          >
-            ← Back
-          </button>
-          <h2 className="text-2xl font-bold text-white">CONTACT US</h2>
-          <div className="w-24" />
-        </div>
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="slide-in-right relative flex items-center justify-center f ">
             <div className="fixed -top-24 right-0"><img src="src\assets\ChatGPT Image Jan 21, 2026, 10_37_16 AM.png" alt="" className="max-w-max" /></div>
-            <form onSubmit={handleSubmit} className="space-y-3 w-full bg-purple-900/70 rounded-3xl py-6 px-10 z-50 md:absolute md:left-full md:top-10 max-h-[75vh] sm:max-h-[90vh] overflow-y-auto no-scrollbar">
+            <form onSubmit={handleSubmit} className="space-y-3 w-full bg-purple-900/70 rounded-3xl py-6 px-10 z-50 md:absolute md:left-full md:top-10 md:max-h-[75vh] sm:max-h-[90vh] overflow-y-auto no-scrollbar">
             <h3 className="text-4xl font-bold text-cyan-300 mb-8">
               Get In Touch
             </h3>
@@ -158,6 +145,10 @@ export default function ContactPage() {
                 <Send size={20} />
                 Send Message
               </button>
+              <div className="relative h-10">
+                <h2 className="absolute bg-purple-900 left-1/4 px-2 text-white text-2xl font-bold z-20">Or Directly contact US</h2>
+                <hr className="relative top-3.5 border-t-4"/>
+              </div>
               <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-cyan-400/30 rounded-lg p-6 hover:border-cyan-400/60 transition">
                 <div className="flex items-start gap-4">
                   <MapPin
