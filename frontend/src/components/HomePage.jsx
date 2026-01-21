@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
-
+import aiBg from "../assets/aiBg.png";
 export default function HomePage() {
   const navigate = useNavigate();
   
@@ -40,6 +40,18 @@ export default function HomePage() {
     style={{
         background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
       }}>
+       
+        {/* AI Background Image */}
+    <div
+      className="absolute inset-0 z-[1]"
+      style={{
+        backgroundImage: `url(${aiBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        opacity: 0.25, // adjust this 👈
+      }}
+    />
 
       {/* Galaxy Animation Background */}
       <div className="absolute inset-0 z-0 w-full h-full">

@@ -3,7 +3,7 @@ import { ChevronDown, MapPin, Clock } from "lucide-react";
 import { FaBus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import aiBg from "../assets/aiBg.png";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
 export default function BusRoutesPage({ onNavigate }) {
   const [expandedRoute, setExpandedRoute] = useState(null);
@@ -156,7 +156,17 @@ const hyperspeedOptions = {
         background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
       }}
     >
-          
+          {/* AI Background Image */}
+    <div
+      className="absolute inset-0 z-[1]"
+      style={{
+        backgroundImage: `url(${aiBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        opacity: 0.25, // 👈 tweak this (0.15 – 0.35)
+      }}
+    /> 
 
       {/* Galaxy Animation - Overlay on top of Hyperspeed */}
       <div className="absolute inset-0 z-5 w-full h-full opacity-60">
