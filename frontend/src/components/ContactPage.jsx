@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Mail, MapPin, Phone, Send } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
-export default function ContactPage({ onNavigate }) {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

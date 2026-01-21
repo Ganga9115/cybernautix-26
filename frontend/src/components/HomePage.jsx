@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Hyperspeed from "../components/HyperSpeedAnimation/Hyperspeed";
 import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
 
-export default function HomePage({ onNavigate }) {
+export default function HomePage() {
   const navigate = useNavigate();
   
   // Countdown state
@@ -35,11 +35,7 @@ export default function HomePage({ onNavigate }) {
     return () => clearInterval(timer);
   }, []);
 
-  const handleRegisterClick = () =>
-    onNavigate ? onNavigate("/register") : navigate("/register");
 
-  const handleRulesClick = () =>
-    onNavigate ? onNavigate("/generalnorms") : navigate("/generalnorms");
 
   const hyperspeedOptions = {
     distortion: "turbulentDistortion",
@@ -136,7 +132,7 @@ export default function HomePage({ onNavigate }) {
 
         <div className="flex gap-6 mt-10 flex-wrap justify-center">
           <button
-            onClick={handleRegisterClick}
+            onClick={()=> navigate("/events")}
             className="
               px-8 py-3 font-mono tracking-wider
               border-2 border-[#00d1ff]
@@ -150,7 +146,7 @@ export default function HomePage({ onNavigate }) {
           </button>
 
           <button
-            onClick={handleRulesClick}
+            onClick={()=> navigate("/rules")}
             className="
               px-8 py-3 font-mono tracking-wider
               border-2 border-[#ff0000]
