@@ -1,30 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
-import aiBg from "../assets/aiBg.png";
+import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
+
+
 const EventsPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#050814] flex items-center justify-center px-6">
-       {/* Base Gradient */}
-  <div
-    className="absolute inset-0 z-0"
-    style={{
-      background: "linear-gradient(to bottom, #050814, #0a0118, #050814)",
-    }}
-  />
-
-  {/* AI Background Image */}
-  <div
-    className="absolute inset-0 z-[1]"
-    style={{
-      backgroundImage: `url(${aiBg})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      opacity: 0.25, // 🔥 adjust if needed
-    }}
-  />
+    <div className="min-h-screen  flex items-center justify-center px-6" style={{
+        background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
+      }}>
+        <div className="absolute inset-0 z-5 w-full h-full opacity-60">
+        <Galaxy 
+          mouseRepulsion
+          mouseInteraction
+          density={0.8}
+          glowIntensity={0.4}
+          saturation={0.5}
+          hueShift={200}
+          twinkleIntensity={0.2}
+          rotationSpeed={0.05}
+          repulsionStrength={1.5}
+          autoCenterRepulsion={0}
+          starSpeed={0.3}
+          speed={0.5}
+        />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-14 max-w-5xl w-full">
 
         {/* ================= TECH EVENTS ================= */}

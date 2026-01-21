@@ -157,7 +157,7 @@ const hyperspeedOptions = {
       }}
     >
           {/* AI Background Image */}
-    <div
+    {/* <div
       className="absolute inset-0 z-[1]"
       style={{
         backgroundImage: `url(${aiBg})`,
@@ -165,8 +165,11 @@ const hyperspeedOptions = {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         opacity: 0.25, // 👈 tweak this (0.15 – 0.35)
+        height:"100vh",
+        position:"fixed",
+        width:"100vw"
       }}
-    /> 
+    />  */}
 
       {/* Galaxy Animation - Overlay on top of Hyperspeed */}
       <div className="absolute inset-0 z-5 w-full h-full opacity-60">
