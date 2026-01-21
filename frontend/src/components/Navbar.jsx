@@ -10,6 +10,7 @@ const Navbar = () => {
     { label: "Events", href: "/events", onClick: () => navigate("/events") },
     { label: "Rules", href: "/rules", onClick: () => navigate("/rules") },
     { label: "Bus Route", href: "/bus", onClick: () => navigate("/bus") },
+    { label: "Timeline", href: "/timeline", onClick: () => navigate("/timeline") },
     { label: "Contact", href: "/contact", onClick: () => navigate("/contact") }
   ];
 
