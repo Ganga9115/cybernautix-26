@@ -1,12 +1,32 @@
 import { useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
+import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
+
 
 const EventsPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#050814] flex items-center justify-center px-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 max-w-5xl w-full">
+    <div className="min-h-screen  flex items-center justify-center  px-6" style={{
+        background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
+      }}>
+        <div className="absolute inset-0 z-5 w-full h-full opacity-60">
+        <Galaxy 
+          mouseRepulsion
+          mouseInteraction
+          density={0.8}
+          glowIntensity={0.4}
+          saturation={0.5}
+          hueShift={200}
+          twinkleIntensity={0.2}
+          rotationSpeed={0.05}
+          repulsionStrength={1.5}
+          autoCenterRepulsion={0}
+          starSpeed={0.3}
+          speed={0.5}
+        />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 z-50 max-w-5xl w-full">
 
         {/* ================= TECH EVENTS ================= */}
         <ElectricBorder
@@ -44,7 +64,7 @@ const EventsPage = () => {
           <div
             onClick={() => navigate("/non-tech")}
             className="cursor-pointer group bg-black/50 rounded-2xl p-10 backdrop-blur-xl
-            transition duration-500 hover:scale-[1.02]"
+            transition duration-500 hover:scale-[1.02] z-50"
           >
             <h2 className="text-3xl font-bold text-pink-400 mb-4">
               Non-Technical Events
