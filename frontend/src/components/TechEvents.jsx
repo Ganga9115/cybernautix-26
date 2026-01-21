@@ -1,11 +1,14 @@
 import React from "react";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
 import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
+import tedx from "../assets/tedx.png";
+import paperpresentation from "../assets/paper-presentation.png";
+import hackathon from "../assets/Hackathon.jpeg";
 
 const events = [
   {
-    title: "InnovateX",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    title: "Hackathon",
+    image: hackathon,
     description:
       "An on-the-spot problem-solving challenge where participants design innovative and feasible solutions and present them to a jury.",
     rules: [
@@ -16,8 +19,8 @@ const events = [
     ],
   },
   {
-    title: "Code Nova",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+    title: "Paper Presentation",
+    image:paperpresentation,
     description:
       "A competitive coding contest testing logic, problem-solving skills, and algorithmic thinking under time pressure.",
     rules: [
@@ -28,8 +31,8 @@ const events = [
     ],
   },
   {
-    title: "Tech Orbit",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    title: "TEDX",
+    image: tedx,
     description:
       "A technical quiz covering computer science, emerging technologies, and real-world applications.",
     rules: [
@@ -40,8 +43,8 @@ const events = [
     ],
   },
   {
-    title: "Design Galaxy",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f",
+    title: "AI Event",
+    image: hackathon,
     description:
       "A creative UI/UX and poster design event focused on aesthetics, usability, and originality.",
     rules: [

@@ -1,11 +1,12 @@
 import React from "react";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import nontechimg from "../assets/nontech-2.png";
 
 const events = [
   {
     title: "Mind Spark",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+    image: nontechimg,
     description:
       "A fast-paced non-technical quiz event designed to test logical thinking, presence of mind, and general awareness.",
     rules: [
@@ -17,7 +18,7 @@ const events = [
   },
   {
     title: "Stage Storm",
-    image: "https://images.unsplash.com/photo-1515169067865-5387ec356754",
+    image: nontechimg,
     description:
       "A high-energy performance event where participants showcase talent through speaking, acting, or entertainment.",
     rules: [
