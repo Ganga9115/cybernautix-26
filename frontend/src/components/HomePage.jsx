@@ -99,8 +99,7 @@ export default function HomePage() {
       CYBERNAUTIX'26
     </motion.h1>
 
-    {/* Buttons */}
-    <div className="flex gap-6 mt-10 flex-wrap">
+    <div className="flex justify-center mt-10">
       <button
         onClick={() => navigate("/events")}
         className="
@@ -118,26 +117,7 @@ export default function HomePage() {
       >
         REGISTER NOW
       </button>
-
-      <button
-        onClick={() => navigate("/rules")}
-              className="
-        relative px-8 py-3 rounded-xl
-        bg-black
-        border border-pink-500
-        text-white font-semibold
-
-        shadow-[0_0_6px_2px_rgba(236,72,153,0.25)]
-        transition-all duration-300 ease-out
-
-        hover:shadow-[0_0_36px_10px_rgba(236,72,153,0.95)]
-        hover:border-pink-400
-      "
-      >
-        GENERAL NORMS
-      </button>
     </div>
-
     {/* Countdown */}
     <div className="grid grid-cols-4 gap-6 mt-16">
       {Object.entries(timeLeft).map(([label, value]) => (
