@@ -7,7 +7,7 @@ const EventsPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen  flex items-center justify-center px-6" style={{
+    <div className="min-h-screen  flex items-center justify-center  px-6" style={{
         background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
       }}>
         <div className="absolute inset-0 z-5 w-full h-full opacity-60">
@@ -26,7 +26,7 @@ const EventsPage = () => {
           speed={0.5}
         />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 z-50 max-w-5xl w-full">
 
         {/* ================= TECH EVENTS ================= */}
         <ElectricBorder
@@ -64,7 +64,7 @@ const EventsPage = () => {
           <div
             onClick={() => navigate("/non-tech")}
             className="cursor-pointer group bg-black/50 rounded-2xl p-10 backdrop-blur-xl
-            transition duration-500 hover:scale-[1.02]"
+            transition duration-500 hover:scale-[1.02] z-50"
           >
             <h2 className="text-3xl font-bold text-pink-400 mb-4">
               Non-Technical Events

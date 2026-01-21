@@ -1,7 +1,5 @@
 import React from "react";
-import TechAntigravityBackground from "./Antigravity/TechAntigravityBackground";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
-import Magnet from "./Magnet/Magnet";
 import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
 
 const events = [
