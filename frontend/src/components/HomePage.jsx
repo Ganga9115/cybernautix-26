@@ -104,26 +104,35 @@ export default function HomePage() {
       <button
         onClick={() => navigate("/events")}
         className="
-          px-8 py-3 font-mono tracking-wider
-          border-2 border-[#00d1ff]
-          text-[#00d1ff]
-          hover:bg-[#00d1ff]/10
-          transition-all
-          shadow-[0_0_20px_#00d1ff]
-        "
+        relative px-8 py-3 rounded-xl
+        bg-black
+        border border-purple-500
+        text-white font-semibold
+
+        shadow-[0_0_6px_2px_rgba(168,85,247,0.25)]
+        transition-all duration-300 ease-out
+
+        hover:shadow-[0_0_36px_10px_rgba(168,85,247,0.95)]
+        hover:border-purple-400
+      "
       >
         REGISTER NOW
       </button>
 
       <button
         onClick={() => navigate("/rules")}
-        className="
-          px-8 py-3 font-mono tracking-wider
-          border-2 border-[#ff0000]
-          text-[#ff6b6b]
-          hover:bg-[#ff0000]/10
-          transition-all
-        "
+              className="
+        relative px-8 py-3 rounded-xl
+        bg-black
+        border border-pink-500
+        text-white font-semibold
+
+        shadow-[0_0_6px_2px_rgba(236,72,153,0.25)]
+        transition-all duration-300 ease-out
+
+        hover:shadow-[0_0_36px_10px_rgba(236,72,153,0.95)]
+        hover:border-pink-400
+      "
       >
         GENERAL NORMS
       </button>
