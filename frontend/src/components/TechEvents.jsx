@@ -144,17 +144,17 @@ const TechEvents = () => {
                   </div>
 
                   <div className="mt-6 flex gap-4">
-  <Magnet padding={40} magnetStrength={20}>
+  
     <button className="w-full border border-green-400/40 text-green-400 py-2 px-4 rounded-lg hover:bg-green-400/10 transition">
       WhatsApp Group
     </button>
-  </Magnet>
+  
 
-  <Magnet padding={40} magnetStrength={20}>
+  
     <button className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition">
       Register Now →
     </button>
-  </Magnet>
+  
 </div>
 
                 </div>

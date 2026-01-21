@@ -17,7 +17,7 @@ const Navbar = () => {
   <div style={{width:"100vw",display:"flex",justifyContent:"center"}}>
       <GooeyNav
         items={items}
-        particleCount={15}
+        particleCount={10}
         particleDistances={[90, 10]}
         particleR={100}
         initialActiveIndex={0}

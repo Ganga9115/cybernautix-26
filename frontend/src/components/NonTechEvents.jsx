@@ -1,10 +1,11 @@
 import React from "react";
+import ElectricBorder from "./ElectricBorder/ElectricBorder";
+import Galaxy from "../components/GalaxyAnimation/Galaxy";
 
 const events = [
   {
     title: "Mind Spark",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
     description:
       "A fast-paced non-technical quiz event designed to test logical thinking, presence of mind, and general awareness.",
     rules: [
@@ -16,8 +17,7 @@ const events = [
   },
   {
     title: "Stage Storm",
-    image:
-      "https://images.unsplash.com/photo-1515169067865-5387ec356754",
+    image: "https://images.unsplash.com/photo-1515169067865-5387ec356754",
     description:
       "A high-energy performance event where participants showcase talent through speaking, acting, or entertainment.",
     rules: [
@@ -31,13 +31,30 @@ const events = [
 
 const NonTechEvents = () => {
   return (
-    <div className="min-h-screen bg-[#060914] text-white relative overflow-hidden">
-      {/* Cosmic Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#3b1d5a,transparent_45%),radial-gradient(circle_at_70%_70%,#0d3b4f,transparent_45%)] opacity-70" />
+    <div className="relative min-h-screen bg-black overflow-hidden text-white">
 
-      {/* Content Wrapper */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-16">
-        {/* Title */}
+      {/* 🌌 Galaxy Animated Background */}
+      <div className="absolute inset-0 z-[0] opacity-60">
+        <Galaxy
+          mouseRepulsion
+          mouseInteraction
+          density={0.8}
+          glowIntensity={0.4}
+          saturation={0.6}
+          hueShift={330}
+          twinkleIntensity={0.25}
+          rotationSpeed={0.04}
+          repulsionStrength={1.2}
+          starSpeed={0.3}
+          speed={0.5}
+        />
+      </div>
+
+      {/* 🌠 Soft Glow Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#3b1d5a,transparent_40%),radial-gradient(circle_at_80%_80%,#0d3b4f,transparent_40%)] opacity-60 z-[1]" />
+
+      {/* 📦 Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
         <h1 className="text-center text-5xl md:text-6xl font-extrabold tracking-wide text-pink-400">
           Non-Technical Events
         </h1>
@@ -57,55 +74,61 @@ const NonTechEvents = () => {
           </div>
         </div>
 
-        {/* Event Cards */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* ⚡ Electric Border Cards */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
           {events.map((event, index) => (
-            <div
+            <ElectricBorder
               key={index}
-              className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl hover:border-pink-400/50 transition duration-500 shadow-[0_0_40px_rgba(255,105,180,0.08)]"
+              color="#ff7ad9"
+              speed={0.8}
+              chaos={0.08}
+              style={{ borderRadius: 24 }}
             >
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-56 object-cover group-hover:scale-105 transition duration-500"
-                />
-              </div>
+              <div className="bg-black/60 rounded-2xl overflow-hidden backdrop-blur-xl transition-transform duration-500 hover:scale-[1.02]">
 
-              {/* Card Content */}
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-pink-300 mb-3">
-                  {event.title}
-                </h2>
-
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {event.description}
-                </p>
-
-                {/* Rules */}
-                <div className="mt-5">
-                  <h3 className="text-sm uppercase tracking-widest text-orange-400 mb-2">
-                    Rules
-                  </h3>
-                  <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm">
-                    {event.rules.map((rule, i) => (
-                      <li key={i}>{rule}</li>
-                    ))}
-                  </ul>
+                {/* Image */}
+                <div className="overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
 
-                {/* Buttons */}
-                <div className="mt-6 flex gap-4">
-                  <button className="flex-1 border border-green-400/40 text-green-400 py-2 rounded-lg hover:bg-green-400/10 transition">
-                    WhatsApp Group
-                  </button>
-                  <button className="flex-1 bg-gradient-to-r from-pink-500 to-orange-500 text-black font-semibold py-2 rounded-lg hover:opacity-90 transition">
-                    Register Now →
-                  </button>
+                {/* Content */}
+                <div className="p-6">
+                  <h2 className="text-2xl font-bold text-pink-300 mb-3">
+                    {event.title}
+                  </h2>
+
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {event.description}
+                  </p>
+
+                  <div className="mt-5">
+                    <h3 className="text-sm uppercase tracking-widest text-orange-400 mb-2">
+                      Rules
+                    </h3>
+                    <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm">
+                      {event.rules.map((rule, i) => (
+                        <li key={i}>{rule}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Buttons */}
+                  <div className="mt-6 flex gap-4">
+                    <button className="w-full border border-green-400/40 text-green-400 py-2 px-4 rounded-lg hover:bg-green-400/10 transition">
+                      WhatsApp Group
+                    </button>
+
+                    <button className="w-full bg-gradient-to-r from-pink-500 to-orange-500 text-black font-semibold py-2 px-4 rounded-lg hover:opacity-90 transition">
+                      Register Now →
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ElectricBorder>
           ))}
         </div>
       </div>
