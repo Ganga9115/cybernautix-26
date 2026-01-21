@@ -7,7 +7,7 @@ import GeneralNormsPage from "./components/GeneralNormsPage";
 import TechEvents from "./components/TechEvents";
 import NonTechEvents from "./components/NonTechEvents";
 import EventsPage from "./components/EventsPage";
-
+import BusRoutes from "./components/BusRoutes";
 export default function App() {
   const [showLoading, setShowLoading] = useState(true);
 
@@ -30,6 +30,7 @@ export default function App() {
         <Route path="/general-norms" element={<GeneralNormsPage />} />
         <Route path="/events" element={<EventsPage />} /> 
         <Route path="/tech" element={<TechEvents />} />
+        <Route path="/bus-routes" element={<BusRoutes />} />
         <Route path="/non-tech" element={<NonTechEvents />} />
       </Routes>
     </Router>
