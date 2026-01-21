@@ -74,7 +74,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+    <div
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
+      }}
+    >
       {/* Hyperspeed Background - Lower layer */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Hyperspeed effectOptions={hyperspeedOptions} />
