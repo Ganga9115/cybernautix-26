@@ -156,19 +156,32 @@ useEffect(() => {
             </button>
           </div>
 
-          {/* Countdown */}
-         <div className="grid grid-cols-4 gap-2 mt-5">
-           {Object.entries(timeLeft).map(([label, value]) => (
-              <div key={label}>
-                <div className="text-4xl md:text-5xl font-mono text-white/80">
-                  {String(value).padStart(2, "0")}
-                </div>
-                <div className="text-xs tracking-widest text-white/50">
-                  {label.toUpperCase()}
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Glassmorphism Countdown */}
+<div className="flex justify-center gap-4 mt-6">
+  {Object.entries(timeLeft).map(([label, value]) => (
+    <div
+      key={label}
+      className="
+        w-24 h-28
+        rounded-2xl
+        bg-white/15
+        backdrop-blur-md
+        border border-white/25
+        flex flex-col items-center justify-center
+        shadow-[0_8px_32px_rgba(255,255,255,0.15)]
+      "
+    >
+      <div className="text-4xl md:text-5xl font-mono text-white/90 leading-none">
+        {String(value).padStart(2, "0")}
+      </div>
+
+      <div className="mt-2 text-xs tracking-widest text-white/70">
+        {label.toUpperCase()}
+      </div>
+    </div>
+  ))}
+</div>
+
         </div>
 
         {/* RIGHT IMAGE */}
