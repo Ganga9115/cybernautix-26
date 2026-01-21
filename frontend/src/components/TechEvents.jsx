@@ -2,6 +2,7 @@ import React from "react";
 import TechAntigravityBackground from "./Antigravity/TechAntigravityBackground";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
 import Magnet from "./Magnet/Magnet";
+import Galaxy from "../components/GalaxyAnimation/Galaxy"; 
 
 const events = [
   {
@@ -59,7 +60,22 @@ const TechEvents = () => {
     <div className="relative min-h-screen bg-black overflow-hidden text-white">
 
       {/* 🌀 Antigravity Background */}
-      <TechAntigravityBackground />
+   <div className="absolute inset-0 z-5 w-full h-full opacity-60">
+        <Galaxy 
+          mouseRepulsion
+          mouseInteraction
+          density={0.8}
+          glowIntensity={0.4}
+          saturation={0.5}
+          hueShift={200}
+          twinkleIntensity={0.2}
+          rotationSpeed={0.05}
+          repulsionStrength={1.5}
+          autoCenterRepulsion={0}
+          starSpeed={0.3}
+          speed={0.5}
+        />
+      </div>
 
       {/* 🌌 Galaxy Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#1b2a4e,transparent_40%),radial-gradient(circle_at_80%_80%,#2d0b59,transparent_40%)] opacity-60 z-[1]" />
