@@ -1,38 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import SplashScreen from './components/SplashScreen';
+import HomePage from './components/HomePage';
 
-import LoadingPage from "./components/LoagingPage";
-import HomePage from "./components/HomePage";
-import GeneralNormsPage from "./components/GeneralNormsPage";
-import TechEvents from "./components/TechEvents";
-import NonTechEvents from "./components/NonTechEvents";
-import EventsPage from "./components/EventsPage";
-import BusRoutes from "./components/BusRoutes";
-export default function App() {
-  const [showLoading, setShowLoading] = useState(true);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
+    // Hide splash screen after 10 seconds (10000 ms)
     const timer = setTimeout(() => {
-      setShowLoading(false);
-    }, 10000); // 10 seconds loading
+      setShowSplash(false);
+    }, 2000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // cleanup
   }, []);
 
-  if (showLoading) {
-    return <LoadingPage />;
-  }
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/general-norms" element={<GeneralNormsPage />} />
-        <Route path="/events" element={<EventsPage />} /> 
-        <Route path="/tech" element={<TechEvents />} />
-        <Route path="/bus-routes" element={<BusRoutes />} />
-        <Route path="/non-tech" element={<NonTechEvents />} />
-      </Routes>
-    </Router>
+    <div className="w-full h-full">
+      {showSplash ? <SplashScreen /> : <HomePage />}
+    </div>
   );
-}
+};
+
+export default App;
