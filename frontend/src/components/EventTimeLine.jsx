@@ -38,7 +38,7 @@ export default function EventTimeline() {
        
 
        {/* Timeline */}
-<section className="relative mt-32">
+<section className="relative mt-12">
 
   {/* Heading spacing */}
   <div className="flex items-center justify-center mb-24 px-6 py-2 rounded-lg
@@ -75,7 +75,7 @@ export default function EventTimeline() {
   </svg>
 
   {/* Timeline items */}
-  <div className="relative flex flex-col gap-28">
+  <div className="relative flex flex-col gap-20">
     {timeline.map((item, idx) => {
       const isLeft = idx % 2 === 0;
 
