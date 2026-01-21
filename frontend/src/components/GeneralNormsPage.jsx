@@ -42,7 +42,7 @@ export default function GeneralNormsPage() {
         <div className="flex justify-center mb-10">
           <div className="px-10 py-4 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40">
             <h2 className="text-4xl font-bold text-pink-400">
-              General Norms 📝
+              General Norms
             </h2>
           </div>
         </div>
@@ -82,35 +82,38 @@ export default function GeneralNormsPage() {
           <button
             onClick={() => navigate("/timeline")}
             className="
-              px-10 py-3
-              rounded-xl
-              font-semibold
-              text-purple-200
-              bg-purple-500/10
-              border border-purple-500/40
-              backdrop-blur-md
-              hover:bg-purple-500/20
-              hover:border-purple-400
-              transition-all
-            "
+        relative px-8 py-3 rounded-xl
+        bg-black
+        border border-purple-500
+        text-white font-semibold
+
+        shadow-[0_0_6px_2px_rgba(168,85,247,0.25)]
+        transition-all duration-300 ease-out
+
+        hover:shadow-[0_0_36px_10px_rgba(168,85,247,0.95)]
+        hover:border-purple-400
+      "
           >
             View Event Timeline
           </button>
 
-          <button
-            className="
-              px-10 py-3
-              rounded-xl
-              font-semibold
-              text-white
-              bg-[#1a0b2e]
-              border border-purple-700
-              hover:bg-[#2a0f4a]
-              transition
-            "
-          >
-            Register Now ✒️
-          </button>
+          <button onClick={() => navigate("/events")}
+  className="
+        relative px-8 py-3 rounded-xl
+        bg-black
+        border border-purple-500
+        text-white font-semibold
+
+        shadow-[0_0_6px_2px_rgba(168,85,247,0.25)]
+        transition-all duration-300 ease-out
+
+        hover:shadow-[0_0_36px_10px_rgba(168,85,247,0.95)]
+        hover:border-purple-400
+      "
+>
+  REGISTER NOW
+</button>
+
         </div>
       </div>
     </div>

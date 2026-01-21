@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import { useNavigate } from "react-router-dom";
 
 export default function EventTimeline() {
   const [expandedEvent, setExpandedEvent] = useState(null);
+  const navigate = useNavigate();
 
   const timeline = [
     { time: "8:30 – 9:00", event: "Registration" },
@@ -45,7 +47,7 @@ export default function EventTimeline() {
     bg-gradient-to-r from-pink-500/20 to-purple-500/20
     border border-pink-500/40 w-96 mx-auto">
     <h3 className="text-4xl font-bold text-pink-400">
-      Event Timeline ⏳
+      Event Timeline
     </h3>
   </div>
 
@@ -117,20 +119,23 @@ export default function EventTimeline() {
 
 {/* Actions */}
 <div className="mt-20 flex justify-center gap-6">
-  <button
-    onClick={() => navigate("/events")}  className="
-              px-10 py-3
-              rounded-xl
-              font-semibold
-              text-white
-              bg-[#1a0b2e]
-              border border-purple-700
-              hover:bg-[#2a0f4a]
-              transition
-            "
-          >
-            Register Now ✒️
-          </button>
+  <button onClick={() => navigate("/events")}
+  className="
+        relative px-8 py-3 rounded-xl
+        bg-black
+        border border-purple-500
+        text-white font-semibold
+
+        shadow-[0_0_6px_2px_rgba(168,85,247,0.25)]
+        transition-all duration-300 ease-out
+
+        hover:shadow-[0_0_36px_10px_rgba(168,85,247,0.95)]
+        hover:border-purple-400
+      "
+>
+  REGISTER NOW
+</button>
+
        </div>
       </div>
     </div>
