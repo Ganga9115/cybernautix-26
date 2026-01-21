@@ -11,6 +11,7 @@ import NonTechEvents from "./components/NonTechEvents";
 import GeneralNormsPage from "./components/GeneralNormsPage";
 import BusRoutes from "./components/BusRoutes";
 import ContactPage from "./components/ContactPage";
+import EventTimeLine from "./components/EventTimeLine";
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/rules" element={<GeneralNormsPage />} />
         <Route path="/bus" element={<BusRoutes />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/timeline" element={<EventTimeLine />} />
       </Route>
     </Routes>
   );
