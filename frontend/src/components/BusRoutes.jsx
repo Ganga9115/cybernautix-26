@@ -192,7 +192,7 @@ const hyperspeedOptions = {
 
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="mb-8">
           <h3
             className="text-4xl font-bold mb-4"
@@ -222,7 +222,7 @@ const hyperspeedOptions = {
         </div>
 
         {/* Bus Routes */}
-        <div className="space-y-4">
+        <div className="space-y-4 w-full rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 transition relative z-10">
           {filteredRoutes.map((route, idx) => (
             <div
               key={idx}
@@ -323,16 +323,16 @@ const hyperspeedOptions = {
 
         {/* Info Box */}
         <div
-          className="mt-12 rounded-lg p-6"
+          className="mt-12 rounded-lg p-6  shadow-[0_0_6px_2px_rgba(168,85,247,0.25)] relative z-10"
           style={{
             background: "linear-gradient(135deg, #1a0b2e, #0a0118)",
             border: "1px solid #9333ea",
           }}
         >
-          <p className="font-semibold mb-2" style={{ color: "#ec4899" }}>
+          <p className="font-semibold mb-2" style={{ color: "#e9157f" }}>
             📌 Important Notes:
           </p>
-          <ul className="space-y-2" style={{ color: "#d8b4fe" }}>
+          <ul className="space-y-2" style={{ color: "#ffffff" }}>
             <li>• Buses are only available on the day of the event</li>
             <li>• Arrival times may vary due to traffic</li>
             <li>• All buses converge at the college campus</li>
