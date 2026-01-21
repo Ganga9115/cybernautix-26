@@ -135,8 +135,10 @@ export default function GeneralNormsPage() {
         </section>
 
         {/* Timeline */}
-<section className="mb-24">
-  <div className="flex items-center justify-center mb-16 px-6 py-2 rounded-lg
+<section className="relative mt-32">
+
+  {/* Heading spacing */}
+  <div className="flex items-center justify-center mb-24 px-6 py-2 rounded-lg
     bg-gradient-to-r from-pink-500/20 to-purple-500/20
     border border-pink-500/40 w-96 mx-auto">
     <h3 className="text-4xl font-bold text-pink-400">
@@ -144,70 +146,94 @@ export default function GeneralNormsPage() {
     </h3>
   </div>
 
-  <div className="relative">
-    {/* Center vertical spine */}
-    <div className="absolute left-1/2 top-0 bottom-0 w-[3px]
-      -translate-x-1/2
-      bg-gradient-to-b from-purple-600 via-blue-500 to-pink-500
-      shadow-[0_0_20px_rgba(168,85,247,0.6)]" />
+  {/* Curved spine */}
+  <svg
+  className="absolute left-1/2 top-40 -translate-x-1/2 h-[calc(100%-16rem)] w-[200px]"
+  viewBox="0 0 200 1000"
+  fill="none"
+  preserveAspectRatio="none"
+>
 
-    <div className="space-y-16">
-      {timeline.map((item, idx) => {
-        const isLeft = idx % 2 === 0;
+    <path
+      d="M100 0
+         C 130 150, 70 300, 100 450
+         C 130 600, 70 750, 100 1000"
+      stroke="url(#timelineGradient)"
+      strokeWidth="3"
+      fill="none"
+    />
+    <defs>
+      <linearGradient id="timelineGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#c084fc" />
+        <stop offset="50%" stopColor="#60a5fa" />
+        <stop offset="100%" stopColor="#f472b6" />
+      </linearGradient>
+    </defs>
+  </svg>
 
-        return (
-          <div key={idx} className="relative flex items-center w-full">
-            {/* Center dot */}
-            <div className="absolute left-1/2 -translate-x-1/2 z-10">
-              <div className="w-12 h-12 rounded-full bg-[#0a0118]
-                border-4 border-purple-500
-                shadow-[0_0_20px_rgba(168,85,247,0.8)]
-                flex items-center justify-center">
-                <div className="w-3 h-3 rounded-full bg-purple-400" />
-              </div>
-            </div>
+  {/* Timeline items */}
+  <div className="relative flex flex-col gap-28">
+    {timeline.map((item, idx) => {
+      const isLeft = idx % 2 === 0;
 
-            {/* Timeline card */}
-            <div
-              className={`w-full md:w-1/2 ${
-                isLeft
-                  ? "md:pr-16 md:text-right"
-                  : "md:pl-16 md:ml-auto"
-              }`}
-            >
-              <div
-                className="inline-block rounded-2xl border border-purple-700
-                bg-gradient-to-r from-[#1f0b3a] via-[#160728] to-[#0a0118]
-                backdrop-blur-md
-                p-6
-                shadow-[0_0_25px_rgba(168,85,247,0.15)]
-                hover:shadow-[0_0_35px_rgba(168,85,247,0.3)]
-                transition-all duration-300"
-              >
-                <p className="text-purple-400 font-semibold text-sm mb-1">
-                  {item.time}
-                </p>
-                <p className="text-white text-xl font-semibold">
-                  {item.event}
-                </p>
-              </div>
-            </div>
+      return (
+        <div key={idx} className="relative flex justify-center">
+
+          {/* Dot */}
+          <div className="absolute left-1/2 -translate-x-1/2 z-20
+            w-6 h-6 rounded-full bg-purple-500
+            ring-4 ring-purple-500/30" />
+
+          {/* Connector */}
+          <div
+            className={`absolute top-3 w-24 h-[2px] bg-purple-500
+              ${isLeft ? "right-1/2 mr-6" : "left-1/2 ml-6"}`}
+          />
+
+          {/* Card */}
+          <div
+            className={`relative z-10 w-[320px] p-6 rounded-2xl
+              border border-purple-700
+              bg-gradient-to-r from-[#1f0b3a] via-[#160728] to-[#0a0118]
+              shadow-[0_0_25px_rgba(168,85,247,0.2)]
+              ${isLeft ? "mr-[420px]" : "ml-[420px]"}`}
+          >
+            <p className="text-purple-400 font-semibold mb-1">
+              {item.time}
+            </p>
+            <p className="text-white text-xl font-medium">
+              {item.event}
+            </p>
           </div>
-        );
-      })}
-    </div>
+
+        </div>
+      );
+    })}
   </div>
 </section>
 
 
+
         {/* Register Button */}
         <div className="mt-20 flex justify-center">
-          <button className="px-14 py-4 rounded-xl font-bold text-lg text-black
-            bg-gradient-to-r from-purple-900 via-blue-300 to-pink-700
-            hover:shadow-xl hover:shadow-purple-600/40
-            transition transform hover:scale-105">
-            REGISTER NOW
-          </button>
+          <button
+  className="
+    px-12 py-4
+    rounded-xl
+    font-semibold text-lg
+    text-purple-200
+    bg-purple-500/10
+    border border-purple-500/40
+    backdrop-blur-md
+    hover:bg-purple-500/20
+    hover:border-purple-400
+    hover:text-purple-100
+    transition-all duration-300
+  "
+>
+  REGISTER NOW ✒️
+</button>
+
         </div>
       </div>
     </div>
