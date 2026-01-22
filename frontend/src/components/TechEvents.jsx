@@ -9,19 +9,19 @@ import EncryptedText from '../components/ui/EncryptedText';
 
 const events = [
   {
-    title: "Hackathon",
+    title: "HackVerse : Heroes edition",
     image: hackathon,
     description:
-      "An on-the-spot problem-solving challenge where participants design innovative and feasible solutions and present them to a jury.",
+      "Where Innovators Become Heroes",
     rules: [
-      "Individual or team of up to 3 members",
-      "1.5 hours to prepare solution",
-      "Presentation time: 4–5 minutes",
-      "Judging based on innovation & feasibility",
+      "All team members must be present during the offline final.",
+      "Only one entry per team is allowed.",
+      "Inter department teams allowed.",
+      "Team size - 1 to 3 members.",
     ],
   },
   {
-    title: "Paper Presentation",
+    title: "Papermania",
     image:paperpresentation,
     description:
       "A competitive coding contest testing logic, problem-solving skills, and algorithmic thinking under time pressure.",
@@ -165,7 +165,8 @@ const TechEvents = () => {
         </div>
 
         {/* ⚡ Electric Border Event Cards */}
-        <div className="mt-20 grid grid-cols-1 gap-14 place-items-center">
+       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+
 
           {events.map((event, index) => (
             <ElectricBorder
@@ -177,7 +178,7 @@ const TechEvents = () => {
             >
               <div className="
   bg-black/60 
-  w-[50vw] h-[120vh] 
+  w-[45vw] h-[125vh] 
   rounded-2xl 
   overflow-hidden 
   backdrop-blur-xl 

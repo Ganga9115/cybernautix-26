@@ -7,7 +7,7 @@ import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothD
 
 const events = [
   {
-    title: "Mind Spark",
+    title: "DOODLE ARMY",
     image: nontechimg,
     description:
       "A fast-paced non-technical quiz event designed to test logical thinking, presence of mind, and general awareness.",
@@ -134,14 +134,14 @@ const NonTechEvents = () => {
           <div className="bg-gradient-to-r from-pink-500/20 to-orange-400/20 border border-pink-400/30 rounded-xl px-8 py-5 backdrop-blur">
             <p className="text-lg text-center">
               🏆 <span className="text-pink-300 font-semibold">Winner:</span> ₹1,000
-              &nbsp; | &nbsp;
-              🥈 <span className="text-orange-300 font-semibold">Runner-up:</span> ₹500
+             
             </p>
           </div>
         </div>
 
         {/* ⚡ Electric Border Cards */}
-       <div className="mt-20 grid grid-cols-1 gap-14 place-items-center">
+       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+
 
           {events.map((event, index) => (
             <ElectricBorder
@@ -153,7 +153,7 @@ const NonTechEvents = () => {
             >
              <div className="
   bg-black/60
-  w-[50vw] h-[120vh] 
+  w-[45vw] h-[125vh] 
   rounded-2xl
   overflow-hidden
   backdrop-blur-xl
