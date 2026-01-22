@@ -60,7 +60,7 @@ export default function EventTimeline() {
               Updated with deep purple shades from your palette
           */}
           <div
-            className="absolute left-4 md:left-1/2 top-0 -translate-x-1/2 h-full w-[3px] z-0"
+            className="absolute left-4 md:left-1/2 top-5 -translate-x-1/2 h-full w-[3px] z-0"
             style={{
               background: "linear-gradient(to bottom, transparent 0%, #a855f7 20%, #9333ea 50%, #7e22ce 80%, transparent 100%)"
             }}
@@ -87,7 +87,7 @@ export default function EventTimeline() {
 
                   {/* Card Container */}
                   <div
-                    className={`relative z-10 w-full max-w-[320px] p-6 rounded-2xl
+                    className={`relative z-10 w-full max-w-[300px] p-6 rounded-2xl
                       border border-[#581c87] 
                       bg-gradient-to-r from-[#1a0b2e] to-[#0a0118]
                       shadow-[0_0_20px_rgba(147,51,234,0.15)]

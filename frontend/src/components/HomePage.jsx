@@ -106,15 +106,15 @@ useEffect(() => {
   transition={{ delay: 0.3 }}
   className="text-center md:text-center mb-6"
 >
-  <h1 className="text-xl md:text-2xl text-white/90 tracking-wider">
+  <h1 className="text-xl md:text-3xl text-white/90 tracking-wider head-title">
     R.M.K. ENGINEERING COLLEGE
   </h1>
 
-  <h2 className="text-base md:text-lg text-white/70 mt-1">
+  <h2 className="text-base md:text-xl text-white/80 mt-1 dept-title">
     DEPARTMENT OF INFORMATION TECHNOLOGY
   </h2>
 
-  <p className="text-sm md:text-base text-white/50 italic mt-1">
+  <p className="text-sm md:text-base text-white/100  mt-1">
     Presents
   </p>
 </motion.div>
@@ -129,7 +129,7 @@ useEffect(() => {
     text-5xl sm:text-6xl md:text-7xl lg:text-8xl
     font-mono tracking-widest
     text-pink-500
-    drop-shadow-[0_0_45px_#ec4899]
+    drop-shadow-[0_0_45px_#ec4899] cyber-title
   "
 >
   {displayText}
@@ -157,7 +157,7 @@ useEffect(() => {
           </div>
 
         {/* Glassmorphism Countdown */}
-<div className="flex justify-center gap-4 mt-6">
+<div className="flex justify-center gap-4 mt-6 time-title">
   {Object.entries(timeLeft).map(([label, value]) => (
     <div
       key={label}
