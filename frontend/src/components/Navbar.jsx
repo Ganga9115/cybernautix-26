@@ -31,28 +31,51 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between px-6 py-4">
 
-        {/* DESKTOP MENU */}
-        <div className="hidden md:flex gap-10 mx-auto">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.name}
-              to={item.path}
-              className={({ isActive }) =>
-                `
-                relative font-mono text-sm tracking-wider
-                transition-all duration-300
-                ${
-                  isActive
-                    ? "text-[#00d1ff] drop-shadow-[0_0_12px_#00d1ff]"
-                    : "text-white/70 hover:text-white"
-                }
-                `
-              }
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </div>
+   {/* DESKTOP MENU */}
+<div className="hidden md:flex gap-4 mx-auto relative">
+  {navItems.map((item) => (
+    <NavLink
+      key={item.name}
+      to={item.path}
+      className={({ isActive }) =>
+        `
+        relative px-4 py-2 font-mono text-sm tracking-wider
+        transition-colors duration-300
+        ${
+          isActive
+            ? "text-[#00d1ff]"
+            : "text-white/70 hover:text-white"
+        }
+        `
+      }
+    >
+      {({ isActive }) => (
+        <>
+          {isActive && (
+            <motion.div
+              layoutId="nav-active-box"
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 30,
+              }}
+              className="
+                absolute inset-0
+                rounded-xl
+                bg-[#00d1ff]/10
+                border border-[#00d1ff]/40
+                shadow-[0_0_20px_rgba(0,209,255,0.5)]
+                -z-10
+              "
+            />
+          )}
+          {item.name}
+        </>
+      )}
+    </NavLink>
+  ))}
+</div>
+
 
         {/* MOBILE MENU ICON */}
         <button
