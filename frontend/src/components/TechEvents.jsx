@@ -14,7 +14,7 @@ const events = [
     title: "HackVerse : Heroes edition",
     image: hackathon,
     description:
-      "You don’t need superpowers to be a hero. You just need an idea",
+      "Where Innovators Become Heroes",
     rules: [
       "All team members must be present during the offline final.",
       "Only one entry per team is allowed.",
