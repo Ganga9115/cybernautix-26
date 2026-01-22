@@ -3,6 +3,7 @@ import Galaxy from "../components/GalaxyAnimation/Galaxy";
 import { useNavigate } from "react-router-dom";
 import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 
+
 export default function EventTimeline() {
   const navigate = useNavigate();
 
