@@ -1,16 +1,28 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 
 export default function GeneralNormsPage() {
   const navigate = useNavigate();
+
+  const nonTechWords = [
+  {
+    text: "General",
+    className: "text-[#ff7ad9]",
+  },
+  {
+    text: "Norms",
+    className: "text-[#ff7ad9]",
+  },
+  ];
 
   const rules = [
     "Students must bring their respective college ID card.",
     "Usage of mobile phones inside the campus should be avoided.",
     "Confirmation mail will be sent to your registered email ID.",
-    "Participants must use only the college bus provided.",
-    "Boys must come in formal with clean shave.",
+    
+    "Boys must come in formal manner.",
     "Girls should wear formal dress.",
     "No on-spot registration is allowed.",
   ];
@@ -39,13 +51,11 @@ export default function GeneralNormsPage() {
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
         {/* Heading */}
-        <div className="flex justify-center mb-10">
-          <div className="px-10 py-4 rounded-xl bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/40">
-            <h2 className="text-4xl font-bold text-pink-400">
-              General Norms
-            </h2>
-          </div>
-        </div>
+        <TypewriterEffectSmooth
+                  words={nonTechWords}
+                  className="justify-center"
+                  cursorClassName="text-[#ff7ad9]"
+                />
 
         <p className="text-purple-200 text-center mb-14">
           Please read all instructions carefully before participating.
