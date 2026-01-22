@@ -5,15 +5,15 @@ import Galaxy from "./GalaxyAnimation/Galaxy"
 import { TypewriterEffectSmooth } from "./ui/TypewriterEffectSmoothDemo"
 
 const technicalEvents = [
-  { event: "HackVersa", coordinators: "Agila A & Reethu P", contact: "8925246015, 7824829706" },
-  { event: "Papermania", coordinators: "Yadhu Krishna U S", contact: "73389 29314" },
-  { event: "Raw and Rapid", coordinators: "Monika K", contact: "9788606171" },
-  { event: "PromptStudio", coordinators: "Sruthi Shree CK", contact: "8248104709" },
+  { event: "HackVerse", coordinators: "Agila A & Reethu P", contact: "89252 46015, 78248 29706" },
+  { event: "Paper-Mania", coordinators: "Yadhu Krishna U S", contact: "73389 29314" },
+  { event: "Raw and Rapid", coordinators: "Monika K", contact: "97886 06171" },
+  { event: "PromptStudio", coordinators: "Sruthi Shree CK", contact: "82481 04709" },
 ]
 
 const nonTechnicalEvents = [
-  { event: "Doodle Army", coordinators: "Jai Suriya", contact: "6382891112" },
-  { event: "Beat The Clock", coordinators: "Prasanth M", contact: "98945 96552" },
+  { event: "Hawkins Dimension", coordinators: "Jaisurya L", contact: "63828 91112" },
+  { event: "PhantomX", coordinators: "Prasanth M", contact: "98945 96552" },
 ]
 
 const Section = ({ title, data }) => {
@@ -120,7 +120,7 @@ export default function ContactPage() {
                 </div>
 
                 <InfoCard title="Address" text="RSM Nagar, Gummidipoondi Taluk, Kavaraipettai, Tamil Nadu 601206" />
-                <InfoCard title="Email" text="cybernautix@rmkec.ac.in" />
+                <InfoCard title="Email" text="cybernautixhelpdesk@gmail.com" />
 
                 <div className="mt-2 rounded-xl overflow-hidden border border-gray-700 hover:border-green-500 transition-all">
                   <a href="https://www.google.co.in/maps/place/R.M.K.+Engineering+College/@13.3566859,80.1413034,17z/data=!3m1!4b1!4m6!3m5!1s0x3a4d807de229f987:0x11cc13e2927bfabc!8m2!3d13.3566859!4d80.1413034!16zL20vMGM1dmd4?entry=ttu&g_ep=EgoyMDI1MDIxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="block relative group">
