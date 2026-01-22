@@ -12,7 +12,7 @@ const events = [
     title: "HackVerse : Heroes edition",
     image: hackathon,
     description:
-      "Where Innovators Become Heroes",
+      "You don’t need superpowers to be a hero. You just need an idea",
     rules: [
       "All team members must be present during the offline final.",
       "Only one entry per team is allowed.",
@@ -165,7 +165,8 @@ const TechEvents = () => {
         </div>
 
         {/* ⚡ Electric Border Event Cards */}
-       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+      <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 place-items-center">
+
 
 
           {events.map((event, index) => (
@@ -176,15 +177,18 @@ const TechEvents = () => {
               chaos={0.08}
               style={{ borderRadius: 24 }}
             >
-              <div className="
-  bg-black/60 
-  w-[45vw] h-[125vh] 
-  rounded-2xl 
-  overflow-hidden 
-  backdrop-blur-xl 
-  transition-transform duration-500 
-  hover:scale-[1.02]
-">
+              <div
+  className="
+    bg-black/60
+    w-full max-w-xl
+    rounded-2xl
+    overflow-hidden
+    backdrop-blur-xl
+    transition-transform duration-500
+    hover:scale-[1.02]
+  "
+>
+
 
                 
                 {/* Image */}
@@ -192,7 +196,14 @@ const TechEvents = () => {
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-[50vw] h-[65vh] object-cover transition-transform duration-500 hover:scale-105"
+                    className="
+  w-full
+  h-64 sm:h-72 md:h-80
+  object-cover
+  transition-transform duration-500
+  hover:scale-105
+"
+
                   />
                 </div>
 
