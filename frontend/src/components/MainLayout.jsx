@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
-import aiBg from "../assets/aiBg.png";
+import aiBg from "../assets/aiBg.jpg.jpeg";
 const MainLayout = () => {
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
