@@ -2,10 +2,12 @@ import React from "react";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
 import nontechimg from "../assets/nontech-2.png";
+import { useNavigate } from "react-router-dom";
+import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 
 const events = [
   {
-    title: "Mind Spark",
+    title: "DOODLE ARMY",
     image: nontechimg,
     description:
       "A fast-paced non-technical quiz event designed to test logical thinking, presence of mind, and general awareness.",
@@ -30,9 +32,27 @@ const events = [
   },
 ];
 
+const nonTechWords = [
+  {
+    text: "Non",
+    className: "text-[#ff7ad9]",
+  },
+  {
+    text: "Technical",
+    className: "text-[#ff7ad9]",
+  },
+  {
+    text: "Events",
+    className: "text-[#ff7ad9]",
+  },
+];
+
+
+
 const NonTechEvents = () => {
+  const navigate = useNavigate();
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden text-white">
+    <div className="relative min-h-screen bg-black overflow-hidden text-white pt-[4vh]">
 
       {/* 🌌 Galaxy Animated Background */}
       <div className="absolute inset-0 z-[0] opacity-60">
@@ -50,33 +70,79 @@ const NonTechEvents = () => {
           speed={0.5}
         />
       </div>
+{/* 🔝 Top Navigation */}
+<div className="fixed top-0 left-0 right-0 z-20 pointer-events-auto">
+  <div className="max-w-7xl mx-auto px-6 pt-6 flex justify-between items-center">
+
+    {/* ⬅ Back */}
+    <button
+      onClick={() => navigate(-1)}
+      className="
+        flex items-center gap-2
+        px-4 py-2 rounded-full
+        bg-black/60 backdrop-blur-md
+        border border-pink-400/40
+        text-pink-300
+        hover:bg-pink-400/10
+        hover:shadow-[0_0_20px_rgba(255,122,217,0.5)]
+        transition-all duration-300
+      "
+    >
+      ← Back
+    </button>
+
+    {/* ➡ Tech */}
+    <button
+      onClick={() => navigate('/tech')}
+      className="
+        flex items-center gap-2
+        px-4 py-2 rounded-full
+        bg-black/60 backdrop-blur-md
+       border border-pink-400/40
+        text-pink-300
+        hover:bg-pink-400/10
+        hover:shadow-[0_0_20px_rgba(255,122,217,0.5)]
+        transition-all duration-300
+      "
+    >
+      Tech Events
+    </button>
+
+  </div>
+</div>
 
       {/* 🌠 Soft Glow Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#3b1d5a,transparent_40%),radial-gradient(circle_at_80%_80%,#0d3b4f,transparent_40%)] opacity-60 z-[1]" />
 
       {/* 📦 Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-center text-5xl md:text-6xl font-extrabold tracking-wide text-pink-400">
-          Non-Technical Events
-        </h1>
+       <div className="flex flex-col items-center justify-center mt-10">
+ 
 
-        <p className="text-center mt-4 text-gray-300">
-          Creativity, confidence & charisma in orbit ✨
-        </p>
+ <TypewriterEffectSmooth
+  words={nonTechWords}
+  className="justify-center"
+  cursorClassName="text-[#ff7ad9]"
+/>
+
+
+
+</div>
 
         {/* Rewards */}
         <div className="mt-10 flex justify-center">
           <div className="bg-gradient-to-r from-pink-500/20 to-orange-400/20 border border-pink-400/30 rounded-xl px-8 py-5 backdrop-blur">
             <p className="text-lg text-center">
               🏆 <span className="text-pink-300 font-semibold">Winner:</span> ₹1,000
-              &nbsp; | &nbsp;
-              🥈 <span className="text-orange-300 font-semibold">Runner-up:</span> ₹500
+             
             </p>
           </div>
         </div>
 
         {/* ⚡ Electric Border Cards */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+
+
           {events.map((event, index) => (
             <ElectricBorder
               key={index}
@@ -85,14 +151,23 @@ const NonTechEvents = () => {
               chaos={0.08}
               style={{ borderRadius: 24 }}
             >
-              <div className="bg-black/60 rounded-2xl overflow-hidden backdrop-blur-xl transition-transform duration-500 hover:scale-[1.02]">
+             <div className="
+  bg-black/60
+  w-[45vw] h-[125vh] 
+  rounded-2xl
+  overflow-hidden
+  backdrop-blur-xl
+  transition-transform duration-500
+  hover:scale-[1.02]
+">
+
 
                 {/* Image */}
                 <div className="overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-[50vw] h-[65vh]  object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
 

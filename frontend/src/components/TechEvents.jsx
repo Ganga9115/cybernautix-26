@@ -4,22 +4,24 @@ import Galaxy from "../components/GalaxyAnimation/Galaxy";
 import tedx from "../assets/tedx.png";
 import paperpresentation from "../assets/paper-presentation.png";
 import hackathon from "../assets/Hackathon.jpeg";
+import { useNavigate } from "react-router-dom";
+import EncryptedText from '../components/ui/EncryptedText';
 
 const events = [
   {
-    title: "Hackathon",
+    title: "HackVerse : Heroes edition",
     image: hackathon,
     description:
-      "An on-the-spot problem-solving challenge where participants design innovative and feasible solutions and present them to a jury.",
+      "Where Innovators Become Heroes",
     rules: [
-      "Individual or team of up to 3 members",
-      "1.5 hours to prepare solution",
-      "Presentation time: 4–5 minutes",
-      "Judging based on innovation & feasibility",
+      "All team members must be present during the offline final.",
+      "Only one entry per team is allowed.",
+      "Inter department teams allowed.",
+      "Team size - 1 to 3 members.",
     ],
   },
   {
-    title: "Paper Presentation",
+    title: "Papermania",
     image:paperpresentation,
     description:
       "A competitive coding contest testing logic, problem-solving skills, and algorithmic thinking under time pressure.",
@@ -56,12 +58,15 @@ const events = [
   },
 ];
 
+
 const TechEvents = () => {
+  const navigate = useNavigate();
   return (
-    <div className="relative min-h-screen bg-black overflow-hidden text-white">
+    <div className="relative min-h-screen bg-black overflow-hidden text-white pt-[4vh]">
 
       {/* 🌀 Antigravity Background */}
-   <div className="absolute inset-0 z-5 w-full h-full opacity-60">
+   <div className="absolute inset-0 z-0 w-full h-full opacity-60 pointer-events-none">
+
         <Galaxy 
           mouseRepulsion
           mouseInteraction
@@ -77,55 +82,123 @@ const TechEvents = () => {
           speed={0.5}
         />
       </div>
+{/* 🔝 Top Navigation */}
+<div className="fixed top-0 left-0 right-0 z-20 pointer-events-auto">
+  <div className="max-w-7xl mx-auto px-6 pt-6 flex justify-between items-center">
+
+    {/* ⬅ Back */}
+    <button
+      onClick={() => navigate(-1)}
+      className="
+        flex items-center gap-2
+        px-4 py-2 rounded-full
+        bg-black/60 backdrop-blur-md
+        border border-cyan-400/40
+        text-cyan-300
+        hover:bg-cyan-400/10
+        hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]
+        transition-all duration-300
+      "
+    >
+      ← Back
+    </button>
+
+    {/* ➡ Non-Tech */}
+    <button
+      onClick={() => navigate('/non-tech')}
+      className="
+        flex items-center gap-2
+        px-4 py-2 rounded-full
+        bg-black/60 backdrop-blur-md
+        border border-cyan-400/40
+        text-cyan-300
+        hover:bg-cyan-400/10
+        hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]
+        transition-all duration-300
+      "
+    >
+      Non-Tech Events
+    </button>
+
+  </div>
+</div>
+
 
       {/* 🌌 Galaxy Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#1b2a4e,transparent_40%),radial-gradient(circle_at_80%_80%,#2d0b59,transparent_40%)] opacity-60 z-[1]" />
 
       {/* 📦 Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
-        <h1 className="text-center text-5xl md:text-6xl font-extrabold tracking-wide text-[#FF9FFC]">
-          Technical Events
-        </h1>
+       <div className="flex justify-center items-center text-center mt-12">
+  <EncryptedText
+    text="Technical Events"
+    encryptedClassName="
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+      font-normal tracking-wide
+      text-[#22d3ee]
+      opacity-80
+    "
+    revealedClassName="
+      text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+      font-bold tracking-wide
+      bg-clip-text text-transparent
+      bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#0891b2]
+    "
+    revealDelayMs={40}
+    pauseAfterReveal={1800}
+  />
+</div>
 
-        <p className="text-center mt-4 text-gray-300">
-          Compete across galaxies of innovation 🌌
-        </p>
+
+
+        
 
         {/* Rewards */}
         <div className="mt-10 flex justify-center">
           <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-xl px-8 py-5 backdrop-blur">
             <p className="text-lg text-center">
-              🏆 <span className=" text-[#FF9FFC] font-semibold">Winner:</span> ₹1,000
+              🏆 <span className=" text-[#22d3ee] font-semibold">Winner:</span> ₹1,000
               &nbsp; | &nbsp;
-              🥈 <span className="text-purple-300 font-semibold">Runner-up:</span> ₹500
+              🥈 <span className="text-[#22d3ee] font-semibold">Runner-up:</span> ₹500
             </p>
           </div>
         </div>
 
         {/* ⚡ Electric Border Event Cards */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+       <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-14">
+
+
           {events.map((event, index) => (
             <ElectricBorder
               key={index}
-              color="#FF9FFC"
+              color="#22d3ee"
               speed={0.8}
               chaos={0.08}
               style={{ borderRadius: 24 }}
             >
-              <div className="bg-black/60 rounded-2xl overflow-hidden backdrop-blur-xl transition-transform duration-500 hover:scale-[1.02]">
+              <div className="
+  bg-black/60 
+  w-[45vw] h-[125vh] 
+  rounded-2xl 
+  overflow-hidden 
+  backdrop-blur-xl 
+  transition-transform duration-500 
+  hover:scale-[1.02]
+">
+
                 
                 {/* Image */}
                 <div className="overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-56 object-cover transition-transform duration-500 hover:scale-105"
+                    className="w-[50vw] h-[65vh] object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold  text-[#FF9FFC] mb-3">
+                  <h2 className="text-2xl font-bold  text-[#22d3ee] mb-3">
                     {event.title}
                   </h2>
 
