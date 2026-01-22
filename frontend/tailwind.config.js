@@ -32,7 +32,8 @@ module.exports = {
 
         pink: {
           500: "#ec4899",
-          600: "#db2777"
+          600: "#db2777",
+          light: "#ff7ab9"
         },
 
         text: {

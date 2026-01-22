@@ -9,3 +9,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill{
+  -webkit-box-shadow: 0 0 0px 1000px #1a0b2e inset;
+  -webkit-text-fill-color: white;
+}
