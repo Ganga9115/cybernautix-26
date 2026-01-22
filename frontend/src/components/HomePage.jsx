@@ -7,7 +7,7 @@ import aiBg2 from "../assets/aiBg2.png";
 export default function HomePage() {
   const navigate = useNavigate();
 
-  // Countdown state
+  /* ================= COUNTDOWN ================= */
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -15,7 +15,6 @@ export default function HomePage() {
     seconds: 0,
   });
 
-  // Countdown logic
   useEffect(() => {
     const targetDate = new Date("2026-02-09T00:00:00+05:30");
 
@@ -39,47 +38,43 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, []);
 
+  /* ================= TYPING EFFECT ================= */
   const fullText = "CYBERNAUTIX'26";
-const [displayText, setDisplayText] = useState("");
-const [isDeleting, setIsDeleting] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
-useEffect(() => {
-  const typingSpeed = 2000 / fullText.length; // completes in 2 seconds
-  const deletingSpeed = 50;
+  useEffect(() => {
+    const typingSpeed = 2000 / fullText.length;
+    const deletingSpeed = 50;
 
-  const interval = setInterval(() => {
-    setDisplayText((prev) => {
-      if (!isDeleting) {
-        // Typing
-        const next = fullText.slice(0, prev.length + 1);
-        if (next === fullText) {
-          setTimeout(() => setIsDeleting(true), 800); // pause after typing
+    const interval = setInterval(() => {
+      setDisplayText((prev) => {
+        if (!isDeleting) {
+          const next = fullText.slice(0, prev.length + 1);
+          if (next === fullText) {
+            setTimeout(() => setIsDeleting(true), 800);
+          }
+          return next;
+        } else {
+          const next = prev.slice(0, -1);
+          if (next === "") setIsDeleting(false);
+          return next;
         }
-        return next;
-      } else {
-        // Deleting
-        const next = prev.slice(0, -1);
-        if (next === "") {
-          setIsDeleting(false);
-        }
-        return next;
-      }
-    });
-  }, isDeleting ? deletingSpeed : typingSpeed);
+      });
+    }, isDeleting ? deletingSpeed : typingSpeed);
 
-  return () => clearInterval(interval);
-}, [isDeleting]);
-
+    return () => clearInterval(interval);
+  }, [isDeleting]);
 
   return (
     <div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full min-h-screen overflow-hidden"
       style={{
         background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
       }}
     >
-      {/* Galaxy Background */}
-      <div className="absolute inset-0 z-0 w-full h-full">
+      {/* ================= GALAXY BACKGROUND ================= */}
+      <div className="absolute inset-0 z-0">
         <Galaxy
           mouseRepulsion
           mouseInteraction
@@ -90,55 +85,79 @@ useEffect(() => {
           twinkleIntensity={0.2}
           rotationSpeed={0.05}
           repulsionStrength={1.5}
-          autoCenterRepulsion={0}
           starSpeed={0.3}
           speed={0.5}
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between h-screen px-6 md:px-16">
-        {/* LEFT CONTENT */}
-        <div className="w-full md:w-1/2 text-left">
+      {/* ================= CONTENT ================= */}
+      <div className="
+        relative z-10
+        flex flex-col md:flex-row
+        items-center justify-between
+        min-h-screen
+        px-6 md:px-16
+        pt-24 md:pt-0
+        overflow-x-hidden
+      ">
+        {/* ================= LEFT CONTENT ================= */}
+        <div className="w-full md:w-1/2 text-center">
+
+          {/* COLLEGE INFO */}
           <motion.div
-  initial={{ opacity: 0, x: -40 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ delay: 0.3 }}
-  className="text-center md:text-center mb-6"
->
-  <h1 className="text-xl md:text-3xl text-white/90 tracking-wider head-title">
-    R.M.K. ENGINEERING COLLEGE
-  </h1>
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mb-6"
+          >
+            <h1 className="
+              max-w-full px-2
+              text-base sm:text-lg md:text-3xl
+              text-white/90
+              tracking-wider
+              break-words leading-snug
+              head-title
+            ">
+              R.M.K. ENGINEERING COLLEGE
+            </h1>
 
-  <h2 className="text-base md:text-xl text-white/80 mt-1 dept-title">
-    DEPARTMENT OF INFORMATION TECHNOLOGY
-  </h2>
+            <h2 className="
+              max-w-full px-3
+              text-sm sm:text-base md:text-xl
+              text-white/80
+              mt-2
+              break-words leading-relaxed
+              dept-title
+            ">
+              DEPARTMENT OF INFORMATION TECHNOLOGY
+            </h2>
 
-  <p className="text-sm md:text-base text-white/100  mt-1">
-    Presents
-  </p>
-</motion.div>
+            <p className="text-sm text-white/90 mt-2">
+              Presents
+            </p>
+          </motion.div>
 
+          {/* EVENT TITLE */}
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="
+              relative z-20
+              mt-6 mb-10
+              text-5xl sm:text-6xl md:text-7xl lg:text-8xl
+              font-mono tracking-widest
+              text-pink-500
+              drop-shadow-[0_0_45px_#ec4899]
+              cyber-title
+            "
+          >
+            {displayText}
+            <span className="ml-1 text-pink-400 animate-pulse" />
+          </motion.h1>
 
-<motion.h1
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.4 }}
-  className="
-    relative z-20 mb-8
-    text-5xl sm:text-6xl md:text-7xl lg:text-8xl
-    font-mono tracking-widest
-    text-pink-500
-    drop-shadow-[0_0_45px_#ec4899] cyber-title
-  "
->
-  {displayText}
-  <span className="ml-1 text-pink-400 animate-pulse"></span>
-</motion.h1>
-
-
-          {/* Register Button */}
-          <div className="flex justify-center mt-8">
+          {/* REGISTER BUTTON */}
+          <div className="flex justify-center mt-6">
             <button
               onClick={() => navigate("/events")}
               className="
@@ -156,43 +175,60 @@ useEffect(() => {
             </button>
           </div>
 
-        {/* Glassmorphism Countdown */}
-<div className="flex justify-center gap-4 mt-6 time-title">
-  {Object.entries(timeLeft).map(([label, value]) => (
-    <div
-      key={label}
-      className="
-        w-24 h-28
-        rounded-2xl
-        bg-white/15
-        backdrop-blur-md
-        border border-white/25
-        flex flex-col items-center justify-center
-        shadow-[0_8px_32px_rgba(255,255,255,0.15)]
-      "
-    >
-      <div className="text-4xl md:text-5xl font-mono text-white/90 leading-none">
-        {String(value).padStart(2, "0")}
-      </div>
+          {/* COUNTDOWN CLOCK */}
+          <div className="flex justify-center mt-12">
+            <div className="
+              inline-flex items-center
+              gap-2 md:gap-3
+              px-4 py-3
+              rounded-2xl
+              bg-white/0 backdrop-blur-2xl
+              border border-white/15
+              shadow-[0_12px_32px_rgba(0,0,0,0.6)]
+            ">
+              {Object.entries(timeLeft).map(([label, value], idx, arr) => (
+                <React.Fragment key={label}>
+                  <div className="flex flex-col items-center w-[56px] md:w-[72px]">
+                    <div className="
+                      text-2xl md:text-4xl
+                      time-title font-black tracking-tighter
+                      text-white leading-none
+                      drop-shadow-[0_0_12px_rgba(255,255,255,0.9)]
+                    ">
+                      {String(value).padStart(2, "0")}
+                    </div>
 
-      <div className="mt-2 text-xs tracking-widest text-white/70">
-        {label.toUpperCase()}
-      </div>
-    </div>
-  ))}
-</div>
+                    <div className="
+                      mt-2
+                      text-[10px] md:text-xs
+                      font-semibold uppercase
+                      tracking-wider
+                      text-white/80
+                    ">
+                      {label}
+                    </div>
+                  </div>
 
+                  {idx !== arr.length - 1 && (
+                    <div className="text-2xl md:text-3xl font-bold text-white/90 pb-4">
+                      :
+                    </div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* RIGHT IMAGE */}
+        {/* ================= RIGHT IMAGE ================= */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8 }}
           className="
             w-full md:w-1/2
-            flex justify-center
-            mt-12 md:mt-0
+            flex justify-end
+            mt-20 md:mt-0
             md:translate-x-12
           "
         >
