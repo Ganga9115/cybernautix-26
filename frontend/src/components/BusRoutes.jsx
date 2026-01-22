@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import aiBg from "../assets/aiBg.png";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
+
+
 export default function BusRoutesPage({ onNavigate }) {
   const [expandedRoute, setExpandedRoute] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -147,6 +150,21 @@ const hyperspeedOptions = {
       route.source.toLowerCase().includes(searchTerm.toLowerCase()) ||
       route.stops.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  const BusWords = [
+  {
+    text: "College",
+    className: "text-[#ff7ad9]",
+  },
+  {
+    text: "Bus",
+    className: "text-[#ff7ad9]",
+  },
+  {
+    text: "Routes",
+    className: "text-[#ff7ad9]",
+  },
+];
+
 
   return (
     
@@ -194,12 +212,12 @@ const hyperspeedOptions = {
       {/* Content */}
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="mb-8">
-          <h3
-            className="text-4xl font-bold mb-4"
-            style={{ color: "#e9d5ff" }}
-          >
-            College Bus Routes
-          </h3>
+           <TypewriterEffectSmooth
+            words={BusWords}
+            className="justify-center"
+            cursorClassName="text-[#ff7ad9]"
+          />
+          
           <p className="text-lg" style={{ color: "#d8b4fe" }}>
             All buses arrive at college by 8:10 AM. Choose your nearest route for
             convenience.
