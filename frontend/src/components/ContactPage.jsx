@@ -117,10 +117,19 @@ const templateParams = {
 }
 
   const contactWords = [
-    { text: "Get", className: "text-pink-light page-title" },
-    { text: "In", className: "text-pink-light page-title" },
-    { text: "Touch", className: "text-pink-light page-title" },
-  ]
+  {
+    text: "Get",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+  {
+    text: "In",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+  {
+    text: "Touch",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+]
 
   return (
     <div className="min-h-screen bg-bg-primary font-sans relative overflow-hidden">
@@ -129,10 +138,10 @@ const templateParams = {
       </div>
 
       <div className="flex flex-col items-center  justify-center p-0">
-        <div className="relative pt-24 z-10 container mx-auto px-4 py-16 flex flex-col">
+        <div className="relative pt-5 md:pt-24 z-10 container mx-auto px-4 py-16 flex flex-col">
           <TypewriterEffectSmooth words={contactWords} className="justify-center font-sans" cursorClassName="text-pink-light" />
 
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="flex-1 font-sans max-w-6xl mx-auto w-full bg-bg-secondary/40 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-cyan-400/20">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="flex-1 font-sans max-w-6xl mx-auto w-full bg-bg-secondary/40 backdrop-blur-xl rounded-3xl shadow-2xl py-8 px-4 md:px-8 border border-cyan-400/20">
             <div className="grid grid-cols-1 font-sans lg:grid-cols-2 gap-10">
               <form onSubmit={handleSubmit} className="font-sans space-y-6">
                 <div className="border-l-4 border-pink-400 pl-4 ml-4">
@@ -193,7 +202,7 @@ const templateParams = {
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 py-16 pt-0">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-6xl mx-auto w-full bg-bg-secondary/40 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-cyan-400/20">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-6xl mx-auto w-full bg-bg-secondary/40 backdrop-blur-xl rounded-3xl shadow-2xl py-8 px-4 md:px-8 border border-cyan-400/20">
             <div className="text-center mb-10">
               <h2 className="text-4xl font-extrabold font-sans text-pink-light">Event Coordinators Contact</h2>
               <p className="text-purple-200 font-sans mt-2">Technical & Non-Technical Event Coordinators</p>
