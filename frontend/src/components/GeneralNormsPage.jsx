@@ -12,11 +12,11 @@ export default function GeneralNormsPage() {
   const nonTechWords = [
     { 
       text: "General", 
-      className: "text-[#ec4899] page-title text-4xl sm:text-5xl md:text-6xl" 
+      className: "text-pink-light page-title text-4xl sm:text-5xl md:text-6xl" 
     },
     { 
       text: "Norms", 
-      className: "text-[#ec4899] page-title text-4xl sm:text-5xl md:text-6xl" 
+      className: "text-pink-light page-title text-4xl sm:text-5xl md:text-6xl" 
     },
   ];
 
@@ -52,7 +52,7 @@ export default function GeneralNormsPage() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-24">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 pb-28 pt-5 md:pt-24">
         {/* Heading - Now Responsive */}
         <TypewriterEffectSmooth
           words={nonTechWords}
@@ -95,7 +95,7 @@ export default function GeneralNormsPage() {
         </div>
 
         {/* Actions - Flex column on mobile, Row on tablet+ */}
-        <div className="mt-20 flex flex-col sm:flex-row items-center justify-center gap-6">
+        <div className="mt-10 md:mt-15 flex flex-col sm:flex-row items-center justify-center gap-6">
           <button
             onClick={() => navigate("/timeline")}
             className="

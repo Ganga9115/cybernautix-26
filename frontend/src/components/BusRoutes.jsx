@@ -103,9 +103,9 @@ export default function BusRoutesPage() {
   )
 
   const BusWords = [
-    { text: "College", className: "text-[#ec4899] page-title" },
-    { text: "Bus", className: "text-[#ec4899] page-title" },
-    { text: "Routes", className: "text-[#ec4899] page-title" },
+    { text: "College", className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title" },
+    { text: "Bus", className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title" },
+    { text: "Routes", className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title" },
   ]
 
   const notes = [
@@ -121,7 +121,7 @@ export default function BusRoutesPage() {
         <Galaxy density={0.8} glowIntensity={0.4} saturation={0.5} hueShift={200} twinkleIntensity={0.2} rotationSpeed={0.05} repulsionStrength={1.5} autoCenterRepulsion={0} starSpeed={0.3} speed={0.5} />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-20 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 py-5 md:py-20 relative z-10">
         <div className="mb-8 text-center">
           <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ec4899]" />
           <p className="text-lg font-sans" style={{ color: "#d8b4fe" }}>All buses arrive at college by 8:10 AM. Choose your nearest route for convenience.</p>
@@ -157,7 +157,7 @@ export default function BusRoutesPage() {
                 <AnimatePresence style={{ fontFamily: "sans-serif" }}>
                   {expandedRoute === idx && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="p-6 font-sans" style={{ backgroundColor: "#0a0118", borderTop: "1px solid #6b21a8",fontFamily:"sans-serif" }}>
-                      <div className="flex font-sans items-start font-sans gap-4">
+                      <div className="flex font-sans items-start gap-4">
                         <MapPin size={20} className="mt-1 font-sans" style={{ color: "#06b6d4" }} />
                         <div className="w-full font-sans">
                           <h4 className="font-bold font-sans mb-6" style={{ color: "#c084fc" }}>Route Timeline</h4>
@@ -180,7 +180,7 @@ export default function BusRoutesPage() {
         )}
 
         <AnimatedItem delay={0.05}>
-          <div className="mt-12 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
+          <div className="mt-12 pb-20 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
             <div className="flex items-center justify-center font-sans flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-[#0a0118]/10 via-[#1a0b2e]/10 to-[#0a0118]/10 border border-white/10 px-6 md:px-10 py-6">
               <div className="flex items-center font-sans gap-3 mb-4">
                 <h3 className="text-3xl font-bold text-pink-400">Important Notes</h3>

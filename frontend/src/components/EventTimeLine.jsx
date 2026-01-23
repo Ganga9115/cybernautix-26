@@ -17,11 +17,11 @@ export default function EventTimeline() {
   const nonTechWords = [
     {
       text: "Event",
-      className: "text-[#ec4899] text-4xl page-title sm:text-5xl md:text-6xl",
+      className: "text-pink-light text-4xl page-title sm:text-5xl md:text-6xl",
     },
     {
       text: "TimeLine",
-      className: "text-[#ec4899] text-4xl page-title sm:text-5xl md:text-6xl",
+      className: "text-pink-light text-4xl page-title sm:text-5xl md:text-6xl",
     },
   ];
 
@@ -47,7 +47,7 @@ export default function EventTimeline() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-5 md:py-20">
         <TypewriterEffectSmooth
           words={nonTechWords}
           className="justify-center mb-10"
@@ -112,7 +112,7 @@ export default function EventTimeline() {
         </section>
 
         {/* Register Button */}
-        <div className="mt-24 flex justify-center">
+        <div className="mt-10 pb-20 flex justify-center">
           <button
             onClick={() => navigate("/events")}
             className="
