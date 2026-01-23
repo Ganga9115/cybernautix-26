@@ -18,6 +18,12 @@ const nonTechnicalEvents = [
   { event: "PhantomX", coordinators: "Prasanth M", contact: "98945 96552" },
 ]
 
+const sympoCoordinators = [
+  { name: "Harirajan S", email: "230213.it@rmkec.ac.in", contact: "81485 24460" },
+  { name: "Kamali V", email: "230673.it@rmkec.ac.in", contact: "81246 01121" },
+]
+
+
 const Section = ({ title, data }) => {
   return (
     <div className="relative w-full rounded-3xl p-[2px] overflow-hidden">
@@ -43,6 +49,33 @@ const Section = ({ title, data }) => {
     </div>
   )
 }
+
+const Dection = ({ title, data }) => {
+  return (
+    <div className="relative w-full rounded-3xl p-[2px] overflow-hidden">
+      <div className="relative w-full rounded-3xl bg-gradient-to-r from-[#0a0118] via-[#1a0b2e] to-[#0a0118] backdrop-blur-xl p-6 border border-cyan-400/20">
+        <h3 className="text-3xl font-bold text-pink-400 text-center mb-6">{title}</h3>
+        <div className="hidden text-center md:grid grid-cols-3 gap-3 text-cyan-300 text-sm uppercase tracking-wider mb-4 px-2">
+          <div>Name</div>
+          <div>Email</div>
+          <div>Contact</div>
+        </div>
+        <div className="flex flex-col gap-3">
+          {data.map((row, i) => (
+            <div key={i} className="relative w-full rounded-2xl p-[2px] overflow-hidden">
+              <div className="relative text-center grid grid-cols-1 md:grid-cols-3 gap-2 rounded-2xl bg-gradient-to-r from-[#0a0118] via-[#1a0b2e] to-[#0a0118] border-2 border-purple-700 hover:border-purple-500 backdrop-blur-md px-5 py-4">
+                <div className="text-white font-sans font-semibold text-lg">{row.name}</div>
+                <div className="text-purple-200 font-sans font-medium">{row.email}</div>
+                <div className="text-purple-200 font-sans font-semibold">{row.contact}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 
 const GradientBorderInput = ({ label, name, type, value, placeholder, rows, onChange }) => {
   const base = "w-full bg-transparent border-0 font-sans rounded-xl px-5 py-3 text-white placeholder-purple-200/40 focus:outline-none"
@@ -211,6 +244,7 @@ const templateParams = {
             <div className="flex flex-col font-sans gap-10">
               <Section className="font-sans" title="Technical Events" data={technicalEvents} />
               <Section className="font-sans" title="Non-Technical Events" data={nonTechnicalEvents} />
+              <Dection className="font-sans" title="Symposium Coordinators" data={sympoCoordinators} />
             </div>
           </motion.div>
         </div>
