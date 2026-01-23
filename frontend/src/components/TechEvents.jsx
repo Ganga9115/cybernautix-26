@@ -90,6 +90,7 @@ const EventCard = ({ event, index }) => {
     rounded-2xl
     overflow-hidden
     backdrop-blur-xl
+    page-title
     transition-transform duration-500
     hover:scale-[1.02]
   `}
@@ -100,7 +101,7 @@ const EventCard = ({ event, index }) => {
           <img
             src={event.image}
             alt={event.title}
-            className="w-full h-[60vh] object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-[60vh] page-title object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
 
@@ -236,8 +237,8 @@ const TechEvents = () => {
         <div className="flex justify-center mt-12">
           <EncryptedText
             text="Technical Events"
-            encryptedClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#22d3ee] opacity-80"
-            revealedClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#0891b2]"
+            encryptedClassName="text-3xl page-title sm:text-4xl md:text-5xl lg:text-6xl text-[#22d3ee] opacity-80"
+            revealedClassName="text-3xl page-title sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#0891b2]"
             revealDelayMs={55}
             pauseAfterReveal={1800}
           />

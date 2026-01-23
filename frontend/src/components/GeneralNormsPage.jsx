@@ -12,11 +12,11 @@ export default function GeneralNormsPage() {
   const nonTechWords = [
     { 
       text: "General", 
-      className: "text-[#ec4899] text-4xl sm:text-5xl md:text-6xl" 
+      className: "text-[#ec4899] page-title text-4xl sm:text-5xl md:text-6xl" 
     },
     { 
       text: "Norms", 
-      className: "text-[#ec4899] text-4xl sm:text-5xl md:text-6xl" 
+      className: "text-[#ec4899] page-title text-4xl sm:text-5xl md:text-6xl" 
     },
   ];
 
