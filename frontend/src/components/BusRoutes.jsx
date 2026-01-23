@@ -122,7 +122,7 @@ export default function BusRoutesPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-20 relative z-10">
-        <div className="mb-8">
+        <div className="mb-8 text-center">
           <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ec4899]" />
           <p className="text-lg" style={{ color: "#d8b4fe" }}>All buses arrive at college by 8:10 AM. Choose your nearest route for convenience.</p>
         </div>
