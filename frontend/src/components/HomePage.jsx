@@ -97,7 +97,7 @@ export default function HomePage() {
         items-center justify-center
         min-h-screen
         px-6 md:px-16
-        md:pt-0
+        pt-24 md:pt-0
       ">
         {/* ================= LEFT CONTENT ================= */}
         <div className="w-full md:w-1/2 text-center">
@@ -218,6 +218,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* ================= RIGHT IMAGE ================= */}
+        
       </div>
     </div>
   );  
