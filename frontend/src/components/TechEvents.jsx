@@ -46,10 +46,10 @@ const events = [
     description:
       "On spot technical speaking battle where ideas block and tackle over the stage ",
     rules: [
-      "Team size-1 , single-round technical speaking event conducted in English.",
-      "Topics given on spot; mobiles, notes, PPTs strictly prohibited.",
-      "Paired debate using Attack–Block–Tackle format with role reversal",
-      "Professional conduct mandatory; judges’ and organizers’ decisions final.",
+      "Team size one; single-round technical speaking in English.",
+      "On-spot topics; mobiles, notes, PPTs prohibited.",
+      "Paired Attack–Block–Tackle debate with role reversal.",
+      "Professional conduct mandatory; judges’ decisions final.",
     ],
     whatsappLink: "https://chat.whatsapp.com/LKwXUtS5PGZLLEfOLriJMy",
     registerLink: "https://forms.gle/XkzVwsU1VkTx47br8",
