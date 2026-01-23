@@ -75,46 +75,46 @@ const InfoCard = ({ title, text }) => {
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+})
 
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
   const handleSubmit = (e) => {
-    e.preventDefault()
+  e.preventDefault()
 
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-      website_name: "Cybernautix 2026",
-      time: new Date().toLocaleString(),
-    }
+const templateParams = {
+  name: formData.name,
+  email: formData.email,
+  subject: formData.subject,
+  message: formData.message,
+  website_name: "Cybernautix 2026",
+  time: new Date().toLocaleString(),
+}
 
 
-    emailjs
-      .send(
-        "service_s7ldnmf",
-        "template_7qp79ko",
-        templateParams,
-        "SfO3rvYIb1H-n7d8O"
-      )
-      .then(
-        (result) => {
-          console.log("Email sent:", result.text)
-          alert("Query sent successfully 🚀")
-          setFormData({ name: "", email: "", subject: "", message: "" })
-        },
-        (error) => {
-          console.error("Email error:", error.text)
-          alert("Failed to send query ❌ Try again")
-        }
-      )
-  }
+  emailjs
+    .send(
+      "service_96qz3wt",
+      "template_31ruiaa",
+      templateParams,
+      "D99L6ceZ54KHNTT-X"
+    )
+    .then(
+      (result) => {
+        console.log("Email sent:", result.text)
+        alert("Query sent successfully 🚀")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      },
+      (error) => {
+        console.error("Email error:", error.text)
+        alert("Failed to send query ❌ Try again")
+      }
+    )
+}
 
   const contactWords = [
     { text: "Get", className: "text-pink-light" },
@@ -146,14 +146,9 @@ export default function ContactPage() {
                 <GradientBorderInput label="Message" name="message" type="textarea" rows={4} value={formData.message} placeholder="Your message..." onChange={handleChange} />
 
                 <div className="flex items-center justify-center w-full">
-                  <div className="flex justify-center mt-6">
-                    <button
-                      onClick={() => navigate("/events")}
-                      className="relative px-8 py-3 rounded-xl bg-black flex items-center justify-center gap-3 border border-purple-500 text-white font-semibold shadow-[0_0_6px_2px_rgba(168,85,247,0.25)] transition-all duration-300 ease-out hover:shadow-[0_0_36px_10px_rgba(168,85,247,0.95)] hover:border-purple-400"
-                    >
-                      Send Message <Send size={16} />
-                    </button>
-                  </div>
+                  <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} type="submit" className="w-80 rounded-xl p-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
+                    <div className="rounded-xl bg-gray-950 px-6 py-3 flex items-center justify-center gap-2 text-white font-semibold">Send Message <Send size={16} /></div>
+                  </motion.button>
                 </div>
               </form>
 
