@@ -40,7 +40,7 @@ const EventsPage = () => {
             className="cursor-pointer group bg-black/50 rounded-2xl p-10 backdrop-blur-xl
             transition duration-500 hover:scale-[1.02]"
           >
-            <h2 className="text-3xl page-title font-bold text-cyan-400 mb-4">
+            <h2 className="text-3xl font-bold text-cyan-400 mb-4">
               Technical Events
             </h2>
 
@@ -66,7 +66,7 @@ const EventsPage = () => {
             className="cursor-pointer group bg-black/50 rounded-2xl p-10 backdrop-blur-xl
             transition duration-500 hover:scale-[1.02] z-50"
           >
-            <h2 className="text-3xl page-title font-bold text-pink-400 mb-4">
+            <h2 className="text-3xl font-bold text-pink-400 mb-4">
               Non-Technical Events
             </h2>
 
