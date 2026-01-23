@@ -3,6 +3,8 @@ import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 import Galaxy from "./GalaxyAnimation/Galaxy"
 import { TypewriterEffectSmooth } from "./ui/TypewriterEffectSmoothDemo"
+import emailjs from "@emailjs/browser"
+
 
 const technicalEvents = [
   { event: "HackVerse", coordinators: "Agila A & Reethu P", contact: "89252 46015, 78248 29706" },
@@ -72,10 +74,47 @@ const InfoCard = ({ title, text }) => {
 }
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" })
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+})
+
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
-  const handleSubmit = (e) => { e.preventDefault(); setFormData({ name: "", email: "", subject: "", message: "" }) }
+  const handleSubmit = (e) => {
+  e.preventDefault()
+
+const templateParams = {
+  name: formData.name,
+  email: formData.email,
+  subject: formData.subject,
+  message: formData.message,
+  website_name: "Cybernautix 2026",
+  time: new Date().toLocaleString(),
+}
+
+
+  emailjs
+    .send(
+      "service_s7ldnmf",
+      "template_7qp79ko",
+      templateParams,
+      "SfO3rvYIb1H-n7d8O"
+    )
+    .then(
+      (result) => {
+        console.log("Email sent:", result.text)
+        alert("Query sent successfully 🚀")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      },
+      (error) => {
+        console.error("Email error:", error.text)
+        alert("Failed to send query ❌ Try again")
+      }
+    )
+}
 
   const contactWords = [
     { text: "Get", className: "text-pink-light" },
