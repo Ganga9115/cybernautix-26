@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.head-title,.dept-title{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.cyber-title{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(2rem, 8vw, 5rem) !important;
+  letter-spacing: 0.05em;
+}
+
+.time-title{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
