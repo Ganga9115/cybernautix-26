@@ -116,11 +116,21 @@ const templateParams = {
     )
 }
 
-  const contactWords = [
-    { text: "Get", className: "text-pink-light" },
-    { text: "In", className: "text-pink-light" },
-    { text: "Touch", className: "text-pink-light" },
-  ]
+ const contactWords = [
+  {
+    text: "Get",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+  {
+    text: "In",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+  {
+    text: "Touch",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-bg-primary relative overflow-hidden">

@@ -102,11 +102,22 @@ export default function BusRoutesPage() {
       route.stops.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
-  const BusWords = [
-    { text: "College", className: "text-[#ec4899]" },
-    { text: "Bus", className: "text-[#ec4899]" },
-    { text: "Routes", className: "text-[#ec4899]" },
-  ]
+const BusWords = [
+  {
+    text: "College",
+    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
+  },
+  {
+    text: "Bus",
+    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
+  },
+  {
+    text: "Routes",
+    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
+  },
+];
+
+
 
   const notes = [
     "Buses are only available on the day of the event",
