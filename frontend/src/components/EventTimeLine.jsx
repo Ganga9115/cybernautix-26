@@ -17,11 +17,11 @@ export default function EventTimeline() {
   const nonTechWords = [
     {
       text: "Event",
-      className: "text-[#ec4899] text-4xl sm:text-5xl md:text-6xl",
+      className: "text-[#ec4899] text-4xl page-title sm:text-5xl md:text-6xl",
     },
     {
       text: "TimeLine",
-      className: "text-[#ec4899] text-4xl sm:text-5xl md:text-6xl",
+      className: "text-[#ec4899] text-4xl page-title sm:text-5xl md:text-6xl",
     },
   ];
 
