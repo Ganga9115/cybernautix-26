@@ -11,8 +11,13 @@ const RoutePath = ({ stopsText }) => {
     .replace(/\s+/g, " ")
     .trim()
 
-  const stops = cleanText
-    .split(/\s*(?:–|—|-)\s*/g)
+  const splitStops = (text) => {
+    if (!text) return []
+    if (text.includes("–") || text.includes("—")) return text.split(/\s*(?:–|—)\s*/g)
+    return text.split(/\s*,\s*/g)
+  }
+
+  const stops = splitStops(cleanText)
     .map((s) => s.trim())
     .filter(Boolean)
 
@@ -77,7 +82,7 @@ export default function BusRoutesPage() {
     { number: "131", source: "Tiruvallur", stops: "Tiruvallur (6.10) – Kakkalur (6.15) – Ramapuram (6.20) – Sevvaipettai (6.25) – Veppampattu (6.30) – Thiruninravur (6.35) – Jaya College (6.40) – Pattabiram (6.50) – Hindu College (6.55) – Avadi Bus Terminus (7.00) – Thirumulaivoyal (7.05) – Ambattur Rakki (7.10) – College (8.10).", arrivalTime: "8:10 AM" },
     { number: "132", source: "Ambattur", stops: "Ambattur TI Cycles (7.00) – Britannia – Korattur (7.10) – Lucas –TVS (7.15) – Senthil Nagar (7.17) – College (8.10)", arrivalTime: "8:10 AM" },
     { number: "138", source: "Avadi", stops: "Avadi Depot (7.00) – Murugappa Polytechnic (7.05) – Thirumullaivoyal (7.10) – College (8.10).", arrivalTime: "8:10 AM" },
-    { number: "141", source: "T.Nagar", stops: "T.Nagar Panagal Park (6.45 am) , Pondy Bazaar (6.50) , Vani Mahal (6.52) , Vidhyodaya School , Valluvarkottam (6.57) ,Nungabakkam PoliceStation, Sterling Road ,Choolaimedu (7.00) , Arun Hotel (7.05), Anna Arch, Roundtana (7.10), K4, Nathamuni (7.20), Senthil Nagar(7.25), College (8.00)", arrivalTime: "8:00 AM" },
+    { number: "141", source: "T.Nagar", stops: "T.Nagar Panagal Park (6.45) , Pondy Bazaar (6.50) , Vani Mahal (6.52) , Vidhyodaya School , Valluvarkottam (6.57) ,Nungabakkam PoliceStation, Sterling Road ,Choolaimedu (7.00) , Arun Hotel (7.05), Anna Arch, Roundtana (7.10), K4, Nathamuni (7.20), Senthil Nagar(7.25), College (8.00)", arrivalTime: "8:00 AM" },
     { number: "145", source: "Kodambakkam", stops: "Meenakshi College (6.50) – Mahalingapuram (6.55) – Chetpet Signal (6.55) – Ega (6.58) – Pachaiyappa's College (7.02) – Aminjikarai Market – Shenoy Nagar (7.10) – Chinthamani (7.12) – Nathamuni (7.20) – College (8.10)", arrivalTime: "8:10 AM" },
     { number: "153", source: "Mogappair West", stops: "Mogappair West Depot (7.00), Golden Flats (7.05), Collector Nagar Bus Stop (7.05), Padikuppam Road (7.07)- Thirumangalam, (7.10) Anna Nagar West Depot (7.20), College (8.10).", arrivalTime: "8:10 AM" },
     { number: "156", source: "Mogappair East", stops: "Mogappair East (7.00) – Collector Nagar Bus Stop (7.05) – Padikuppam Road (7.07)- Anna Nagar West Depot (7.15) – College (8.10).", arrivalTime: "8:10 AM" },
@@ -101,6 +106,13 @@ export default function BusRoutesPage() {
     { text: "College", className: "text-[#ff7ad9]" },
     { text: "Bus", className: "text-[#ff7ad9]" },
     { text: "Routes", className: "text-[#ff7ad9]" },
+  ]
+
+  const notes = [
+    "Buses are only available on the day of the event",
+    "Arrival times may vary due to traffic",
+    "All buses converge at the college campus",
+    "Report 15 minutes early at your stop",
   ]
 
   return (
@@ -166,15 +178,26 @@ export default function BusRoutesPage() {
           </div>
         )}
 
-        <div className="mt-12 rounded-lg p-6 shadow-[0_0_6px_2px_rgba(168,85,247,0.25)] relative z-10" style={{ background: "linear-gradient(135deg, #1a0b2e, #0a0118)", border: "1px solid #9333ea" }}>
-          <p className="font-semibold mb-2" style={{ color: "#e9157f" }}>📌 Important Notes:</p>
-          <ul className="space-y-2" style={{ color: "#ffffff" }}>
-            <li>• Buses are only available on the day of the event</li>
-            <li>• Arrival times may vary due to traffic</li>
-            <li>• All buses converge at the college campus</li>
-            <li>• Report 15 minutes early at your stop</li>
-          </ul>
-        </div>
+        <AnimatedItem delay={0.05}>
+          <div className="mt-12 flex justify-center relative w-full rounded-2xl p-[2px] overflow-hidden">
+            <div className="flex items-center justify-center flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-[#0a0118]/10 via-[#1a0b2e]/10 to-[#0a0118]/10 border border-white/10 px-6 md:px-10 py-6">
+              <div className="flex items-center gap-3 mb-4">
+                <h3 className="text-3xl font-bold text-pink-400">Important Notes</h3>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 w-full">
+                {notes.map((note, i) => (
+                  <AnimatedItem delay={0.1}>
+                  <div key={i} className="flex items-center w-full gap-3 rounded-xl bg-bg-primary/50 border border-bg-secondary/40 px-6 py-3 hover:bg-bg-secondary/50 transition">
+                    <div className="mt-1 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
+                    <p className="text-sm text-purple-200 font-medium leading-relaxed">{note}</p>
+                  </div>
+                  </AnimatedItem>
+                ))}
+              </div>
+            </div>
+          </div>
+        </AnimatedItem>
       </div>
     </div>
   )
