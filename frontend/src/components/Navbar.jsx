@@ -65,16 +65,16 @@ export default function Navbar() {
         }}
       />
 
-      <div className="relative flex items-center justify-between px-6 py-4">
+      <div className="relative flex items-center justify-between px-2 py-2">
 {/* DESKTOP MENU */}
-<div className="hidden md:flex gap-8 mx-auto relative">
+<div className="hidden md:flex gap-8 text-x1 mx-auto relative">
   {navItems.map((item) => (
     <NavLink
       key={item.name}
       to={item.path}
       className={({ isActive }) =>
         `
-        relative px-2 py-2 font-mono text-sm tracking-wider
+        relative px-2 py-2 font-mono text-x1 font-extrabold tracking-wider
         transition-colors duration-2s
         ${
           isActive
