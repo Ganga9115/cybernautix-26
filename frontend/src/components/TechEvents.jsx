@@ -4,7 +4,7 @@ import ElectricBorder from "./ElectricBorder/ElectricBorder";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
 import EncryptedText from "../components/ui/EncryptedText";
 
-import tedx from "../assets/Raw and Rapid.png";
+import tedx from "../assets/TechTactics.png";
 import paperpresentation from "../assets/PaperMania.png";
 import hackathon from "../assets/HackVerse.png";
 import promptStudio from "../assets/PromptStudio.png";
