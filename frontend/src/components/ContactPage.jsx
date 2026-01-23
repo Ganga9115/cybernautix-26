@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser"
 const technicalEvents = [
   { event: "HackVerse", coordinators: "Agila A & Reethu P", contact: "89252 46015, 78248 29706" },
   { event: "Paper-Mania", coordinators: "Yadhu Krishna U S", contact: "73389 29314" },
-  { event: "Raw and Rapid", coordinators: "Monika K", contact: "97886 06171" },
+  { event: "Tech Tactics", coordinators: "Monika K", contact: "97886 06171" },
   { event: "PromptStudio", coordinators: "Sruthi Shree CK", contact: "82481 04709" },
 ]
 
@@ -171,7 +171,7 @@ export default function ContactPage() {
                     <div className="absolute inset-0 bg-green-500/0 group-hover:bg-green-500/5 transition-all z-10" />
                     <iframe className="w-full h-64 lg:h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.8968250621356!2d80.13872847492559!3d13.356691106318891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d807de229f987%3A0x11cc13e2927bfabc!2sR.M.K.%20Engineering%20College!5e0!3m2!1sen!2sin" style={{ border: "none" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="RMK Engineering College Location" />
                     <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/80 to-transparent text-center">
-                      <span className="text-green-400 text-xs md:text-sm font-medium">Click to open in Google Maps →</span>
+                      <span className="text-purple-950 text-xs md:text-sm font-extrabold">Click to open in Google Maps →</span>
                     </div>
                   </a>
                 </div>

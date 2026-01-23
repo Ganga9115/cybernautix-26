@@ -93,12 +93,11 @@ export default function HomePage() {
       {/* ================= CONTENT ================= */}
       <div className="
         relative z-10
-        flex flex-col md:flex-row
-        items-center justify-between
+        flex
+        items-center justify-center
         min-h-screen
         px-6 md:px-16
         pt-24 md:pt-0
-        overflow-x-hidden
       ">
         {/* ================= LEFT CONTENT ================= */}
         <div className="w-full md:w-1/2 text-center">
@@ -143,11 +142,11 @@ export default function HomePage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             className="
-              relative z-20
+              relative z-20 right-0 md:right-20
               mt-6 mb-10
               text-5xl sm:text-6xl md:text-7xl lg:text-8xl
               font-mono tracking-widest
-              text-pink-500
+              text-[#22d3ee]
               drop-shadow-[0_0_45px_#ec4899]
               cyber-title
             "
@@ -221,27 +220,7 @@ export default function HomePage() {
         </div>
 
         {/* ================= RIGHT IMAGE ================= */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.8 }}
-          className="
-            w-full md:w-1/2
-            flex justify-end
-            mt-20 md:mt-0
-            md:translate-x-12
-          "
-        >
-          <img
-            src={aiBg2}
-            alt="Cyber Illustration"
-            className="
-              w-[90%] max-w-lg
-              drop-shadow-[0_0_60px_#00d1ff]
-              animate-float
-            "
-          />
-        </motion.div>
+        
       </div>
     </div>
   );
