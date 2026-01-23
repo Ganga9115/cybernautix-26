@@ -98,9 +98,9 @@ export default function BusRoutesPage() {
   )
 
   const BusWords = [
-    { text: "College", className: "text-[#ff7ad9]" },
-    { text: "Bus", className: "text-[#ff7ad9]" },
-    { text: "Routes", className: "text-[#ff7ad9]" },
+    { text: "College", className: "text-[#ec4899]" },
+    { text: "Bus", className: "text-[#ec4899]" },
+    { text: "Routes", className: "text-[#ec4899]" },
   ]
 
   return (
@@ -111,7 +111,7 @@ export default function BusRoutesPage() {
 
       <div className="max-w-6xl mx-auto px-4 py-20 relative z-10">
         <div className="mb-8">
-          <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ff7ad9]" />
+          <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ec4899]" />
           <p className="text-lg" style={{ color: "#d8b4fe" }}>All buses arrive at college by 8:10 AM. Choose your nearest route for convenience.</p>
         </div>
 
