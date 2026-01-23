@@ -180,7 +180,7 @@ export default function BusRoutesPage() {
         )}
 
         <AnimatedItem delay={0.05}>
-          <div className="mt-12 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
+          <div className="mt-12 pb-20 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
             <div className="flex items-center justify-center font-sans flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-[#0a0118]/10 via-[#1a0b2e]/10 to-[#0a0118]/10 border border-white/10 px-6 md:px-10 py-6">
               <div className="flex items-center font-sans gap-3 mb-4">
                 <h3 className="text-3xl font-bold text-pink-400">Important Notes</h3>
