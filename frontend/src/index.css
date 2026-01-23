@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------- MOBILE BOTTOM NAV ---------------- */
 @media (max-width: 768px) {
   .mobileBottomNav {
     position: fixed;
@@ -38,14 +39,14 @@
 
   .mobileNavItem.active {
     color: #7C7CFF;
-    transform: translateY(-8px); 
+    transform: translateY(-8px);
     z-index: 10;
   }
 
   .mobileNavItem.active::after {
     content: "";
     position: absolute;
-    bottom: -4px; 
+    bottom: -4px;
     left: 25%;
     right: 25%;
     height: 3px;
@@ -71,9 +72,11 @@
   }
 }
 
-
+/* ---------------- TYPOGRAPHY ---------------- */
 .head-title,
-.dept-title {
+.dept-title,
+.cyber-title,
+.page-title {
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
@@ -81,22 +84,16 @@
 }
 
 .cyber-title {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
   font-size: clamp(2rem, 8vw, 5rem) !important;
   letter-spacing: 0.05em;
 }
 
 .time-title {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 500;
-  font-style: normal;
 }
 
-
+/* ---------------- SCROLLBAR ---------------- */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -106,12 +103,14 @@
   scrollbar-width: none;
 }
 
+/* ---------------- AUTOFILL FIX ---------------- */
 input:-webkit-autofill,
 textarea:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #1a0b2e inset;
   -webkit-text-fill-color: white;
 }
 
+/* ---------------- GLOBAL DEFAULT FONT ---------------- */
 * {
-  font-family: Orbitron, sans-serif;
+  font-family: sans-serif;
 }
