@@ -86,7 +86,7 @@ const EventCard = ({ event, index }) => {
   className={`
     bg-black/60
     w-[80vw] sm:w-[70vw] md:w-[42vw]
-    ${index < 2 ? "h-[120vh]" : "h-[110vh]"}
+    ${index < 2 ? "min-h-[123vh]" : "min-h-[112vh]"}
     rounded-2xl
     overflow-hidden
     backdrop-blur-xl
@@ -96,14 +96,13 @@ const EventCard = ({ event, index }) => {
 >
 
         {/* IMAGE */}
-        <div className="overflow-hidden">
-          <img
-            src={event.image}
-            alt={event.title}
-            className="w-full h-[60vh] object-cover transition-transform duration-500 hover:scale-105"
-          />
-        </div>
-
+       <div className="relative w-full aspect-[14/9] overflow-hidden">
+  <img
+    src={event.image}
+    alt={event.title}
+    className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
+  />
+</div>
         {/* CONTENT */}
         <div className="p-6 flex flex-col h-[45vh]">
           <h2 className="text-2xl font-bold text-[#22d3ee] mb-3">
@@ -146,7 +145,7 @@ const EventCard = ({ event, index }) => {
     </a>
   )}
 
-  <div className="flex gap-4 mt-[2vh]">
+  <div className="flex flex-col sm:flex-row gap-4 mt-[2vh]">
     <a
       href={event.whatsappLink}
       target="_blank"
