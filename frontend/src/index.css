@@ -41,6 +41,9 @@ textarea:-webkit-autofill{
   -webkit-box-shadow: 0 0 0px 1000px #1a0b2e inset;
   -webkit-text-fill-color: white;
 }
-*{
-  font-family: Orbitron, sans-serif;
+.page-title{
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
