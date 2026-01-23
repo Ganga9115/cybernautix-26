@@ -52,7 +52,6 @@ const EventCard = ({ event }) => {
           rounded-2xl
           overflow-hidden
           backdrop-blur-xl
-          page-title
           transition-transform duration-500
           hover:scale-[1.02]
         "
@@ -62,7 +61,7 @@ const EventCard = ({ event }) => {
           <img
             src={event.image}
             alt={event.title}
-            className="w-full h-[60vh] page-title object-cover transition-transform duration-500 hover:scale-105"
+            className="w-full h-[60vh] object-cover transition-transform duration-500 hover:scale-105"
           />
         </div>
 
@@ -127,7 +126,7 @@ const EventCard = ({ event }) => {
   );
 };
 
-const nonTechWords = [ { text: "Non", className: "text-[#ff7ad9] page-title", }, { text: "Technical", className: "text-[#ff7ad9] page-title", }, { text: "Events", className: "text-[#ff7ad9] page-title", }, ];
+const nonTechWords = [ { text: "Non", className: "text-[#ff7ad9]", }, { text: "Technical", className: "text-[#ff7ad9]", }, { text: "Events", className: "text-[#ff7ad9]", }, ];
 const NonTechEvents = () => {
   const navigate = useNavigate();
 
