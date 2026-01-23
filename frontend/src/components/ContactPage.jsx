@@ -98,10 +98,10 @@ const templateParams = {
 
   emailjs
     .send(
-      "service_s7ldnmf",
-      "template_7qp79ko",
+      "service_96qz3wt",
+      "template_31ruiaa",
       templateParams,
-      "SfO3rvYIb1H-n7d8O"
+      "D99L6ceZ54KHNTT-X"
     )
     .then(
       (result) => {

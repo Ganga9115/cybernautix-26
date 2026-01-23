@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
-import aiBg2 from "../assets/aiBg2.png";
+import person from "../assets/person.png";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -233,16 +233,16 @@ export default function HomePage() {
           "
         >
           <img
-            src={aiBg2}
+            src={person}
             alt="Cyber Illustration"
             className="
               w-[90%] max-w-lg
-              drop-shadow-[0_0_60px_#00d1ff]
+              drop-shadow-[0_0_45px_#ec4899]
               animate-float
             "
           />
         </motion.div>
       </div>
     </div>
-  );
+  );  
 }
