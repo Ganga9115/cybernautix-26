@@ -102,22 +102,11 @@ export default function BusRoutesPage() {
       route.stops.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
-const BusWords = [
-  {
-    text: "College",
-    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
-  },
-  {
-    text: "Bus",
-    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
-  },
-  {
-    text: "Routes",
-    className: "text-[#ec4899] text-2xl sm:text-3xl md:text-4xl",
-  },
-];
-
-
+  const BusWords = [
+    { text: "College", className: "text-[#ec4899] page-title" },
+    { text: "Bus", className: "text-[#ec4899] page-title" },
+    { text: "Routes", className: "text-[#ec4899] page-title" },
+  ]
 
   const notes = [
     "Buses are only available on the day of the event",
@@ -135,29 +124,29 @@ const BusWords = [
       <div className="max-w-6xl mx-auto px-4 py-20 relative z-10">
         <div className="mb-8 text-center">
           <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ec4899]" />
-          <p className="text-lg" style={{ color: "#d8b4fe" }}>All buses arrive at college by 8:10 AM. Choose your nearest route for convenience.</p>
+          <p className="text-lg font-sans" style={{ color: "#d8b4fe" }}>All buses arrive at college by 8:10 AM. Choose your nearest route for convenience.</p>
         </div>
 
-        <div className="mb-8">
-          <input type="text" placeholder="Search by bus number or location..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-1 transition" style={{ backgroundColor: "#1a0b2e", border: "1px solid #6b21a8" }} />
+        <div className="mb-8 font-sans">
+          <input type="text" placeholder="Search by bus number or location..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full rounded-lg px-4 py-3 text-white focus:outline-none font-sans focus:ring-1 transition" style={{ backgroundColor: "#1a0b2e", border: "1px solid #6b21a8" }} />
         </div>
 
-        <div className="space-y-4 w-full relative z-10">
+        <div className="space-y-4 w-full font-sans relative z-10">
           {filteredRoutes.map((route, idx) => (
-            <AnimatedItem key={idx} delay={0.05}>
+            <AnimatedItem className="font-sans" key={idx} delay={0.05}>
               <div className="rounded-lg overflow-hidden transition" style={{ background: "linear-gradient(135deg, #1a0b2e, #0a0118)", border: "1px solid #581c87" }}>
-                <button onClick={() => setExpandedRoute(expandedRoute === idx ? null : idx)} className="w-full p-6 flex items-center justify-between transition">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="relative w-16 h-12 flex items-center justify-center flex-shrink-0">
+                <button onClick={() => setExpandedRoute(expandedRoute === idx ? null : idx)} className="w-full p-6 flex items-center font-sans justify-between transition">
+                  <div className="flex items-center font-sans gap-4 text-left">
+                    <div className="relative font-sans w-16 h-12 flex items-center justify-center flex-shrink-0">
                       <FaBus size={60} className="absolute" style={{ color: "#a925eb", opacity: 0.75 }} />
-                      <span className="relative z-10 -translate-y-2 text-white font-bold text-sm">{route.number}</span>
+                      <span className="relative font-sans z-10 -translate-y-2 text-white font-bold text-sm">{route.number}</span>
                     </div>
 
                     <div>
-                      <p className="font-bold text-lg" style={{ color: "#ffffff" }}>{route.source}</p>
-                      <div className="flex items-center gap-2 text-sm" style={{ color: "#06b6d4" }}>
-                        <Clock size={16} />
-                        <span>Arrives: {route.arrivalTime}</span>
+                      <p className="font-bold font-sans text-lg" style={{ color: "#ffffff" }}>{route.source}</p>
+                      <div className="flex items-center gap-2 font-sans text-sm" style={{ color: "#06b6d4" }}>
+                        <Clock className="font-sans" size={16} />
+                        <span className="font-sans">Arrives: {route.arrivalTime}</span>
                       </div>
                     </div>
                   </div>
@@ -165,14 +154,15 @@ const BusWords = [
                   <ChevronDown size={24} className={`transition transform ${expandedRoute === idx ? "rotate-180" : ""}`} style={{ color: "#06b6d4" }} />
                 </button>
 
-                <AnimatePresence>
+                <AnimatePresence style={{ fontFamily: "sans-serif" }}>
                   {expandedRoute === idx && (
-                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="p-6" style={{ backgroundColor: "#0a0118", borderTop: "1px solid #6b21a8" }}>
-                      <div className="flex items-start gap-4">
-                        <MapPin size={20} className="mt-1" style={{ color: "#06b6d4" }} />
-                        <div className="w-full">
-                          <h4 className="font-bold mb-6" style={{ color: "#c084fc" }}>Route Timeline</h4>
-                          <RoutePath stopsText={route.stops} />
+                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="p-6 font-sans" style={{ backgroundColor: "#0a0118", borderTop: "1px solid #6b21a8",fontFamily:"sans-serif" }}>
+                      <div className="flex font-sans items-start font-sans gap-4">
+                        <MapPin size={20} className="mt-1 font-sans" style={{ color: "#06b6d4" }} />
+                        <div className="w-full font-sans">
+                          <h4 className="font-bold font-sans mb-6" style={{ color: "#c084fc" }}>Route Timeline</h4>
+                          <RoutePath className="font-sans" style={{ fontFamily: "sans-serif" }} stopsText={route.stops} />
+                         
                         </div>
                       </div>
                     </motion.div>
@@ -184,15 +174,15 @@ const BusWords = [
         </div>
 
         {filteredRoutes.length === 0 && (
-          <div className="text-center py-12">
-            <p style={{ color: "#d8b4fe" }}>No routes found matching your search.</p>
+          <div className="text-center font-sans py-12">
+            <p style={{ color: "#d8b4fe", fontFamily: "sans-serif" }}>No routes found matching your search.</p>
           </div>
         )}
 
         <AnimatedItem delay={0.05}>
-          <div className="mt-12 flex justify-center relative w-full rounded-2xl p-[2px] overflow-hidden">
-            <div className="flex items-center justify-center flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-[#0a0118]/10 via-[#1a0b2e]/10 to-[#0a0118]/10 border border-white/10 px-6 md:px-10 py-6">
-              <div className="flex items-center gap-3 mb-4">
+          <div className="mt-12 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
+            <div className="flex items-center justify-center font-sans flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-[#0a0118]/10 via-[#1a0b2e]/10 to-[#0a0118]/10 border border-white/10 px-6 md:px-10 py-6">
+              <div className="flex items-center font-sans gap-3 mb-4">
                 <h3 className="text-3xl font-bold text-pink-400">Important Notes</h3>
               </div>
 
@@ -201,7 +191,7 @@ const BusWords = [
                   <AnimatedItem delay={0.1}>
                   <div key={i} className="flex items-center w-full gap-3 rounded-xl bg-bg-primary/50 border border-bg-secondary/40 px-6 py-3 hover:bg-bg-secondary/50 transition">
                     <div className="mt-1 w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
-                    <p className="text-sm text-purple-200 font-medium leading-relaxed">{note}</p>
+                    <p className="text-sm text-purple-200 font-sans font-medium leading-relaxed">{note}</p>
                   </div>
                   </AnimatedItem>
                 ))}
