@@ -66,7 +66,7 @@ const EventCard = ({ event, index }) => {
     >
       {/* MOBILE VIEW: FLIP CARD */}
       <div 
-        className="block md:hidden relative w-[85vw] h-[44vh] [perspective:1000px]"
+        className="block md:hidden relative w-[85vw] h-[50vh] [perspective:1000px]"
         onClick={() => setFlipped(!flipped)}
       >
         <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${flipped ? '[transform:rotateY(180deg)]' : ''}`}>
@@ -150,9 +150,9 @@ const EventCard = ({ event, index }) => {
 };
 
 const nonTechWords = [ 
-  { text: "Non", className: "text-[#ff7ad9] page-title  text-2xl sm:text-5xl md:text-6xl" }, 
-  { text: "Technical", className: "text-[#ff7ad9] page-title  text-2xl sm:text-5xl md:text-6xl" }, 
-  { text: "Events", className: "text-[#ff7ad9] page-title  text-2xl sm:text-5xl md:text-6xl" } 
+  { text: "Non", className: "text-[#ff7ad9] page-title  text-3xl sm:text-4xl md:text-6xl" }, 
+  { text: "Technical", className: "text-[#ff7ad9] page-title  text-3xl sm:text-4xl md:text-6xl" }, 
+  { text: "Events", className: "text-[#ff7ad9] page-title  text-3xl sm:text-4xl md:text-6xl" } 
 ];
 
 const NonTechEvents = () => {
@@ -161,7 +161,7 @@ const NonTechEvents = () => {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden text-white pt-[4vh]">
       {/* BACKGROUND */}
-      <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
         <Galaxy
           mouseRepulsion
           density={0.8}
@@ -169,7 +169,7 @@ const NonTechEvents = () => {
           hueShift={330}
           speed={0.5}
         />
-      </div>
+      </div> */}
 
       {/* TOP NAV */}
       <div className="fixed top-0 left-0 right-0 z-50">

@@ -152,15 +152,15 @@ const templateParams = {
   const contactWords = [
   {
     text: "Get",
-    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title",
   },
   {
     text: "In",
-    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title",
   },
   {
     text: "Touch",
-    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl",
+    className: "text-pink-light text-3xl sm:text-4xl md:text-5xl page-title",
   },
 ]
 

@@ -58,7 +58,7 @@ const SplashScreen = () => {
             bg-clip-text text-transparent
             bg-gradient-to-r from-[#E879F9] via-[#A855F7] to-[#6D28D9]
             drop-shadow-[0_0_25px_#A855F7]
-            leading-tight
+            leading-tight page-title
           "
           revealDelayMs={45}
           pauseAfterReveal={1800}
