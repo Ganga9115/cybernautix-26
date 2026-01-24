@@ -14,8 +14,8 @@ const AnimatedItem = ({ children, delay = 0 }) => (
   </div>
 );
 
-import nontech1img from "../assets/HawkinsDimension.png";
-import nontech2img from "../assets/PhantomX.png";
+import nontech1img from "../assets/HawkinsDimension.webp";
+import nontech2img from "../assets/PhantomX.webp";
 
 const events = [
   {
@@ -29,7 +29,7 @@ const events = [
       "Letters, numbers & symbols prohibited",
     ],
     whatsappLink: "https://chat.whatsapp.com/YOUR_LINK_1",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm4wDjxBld-oeOCCdWrEj094oVpMhY7PbDjZ8-zsrdfk7Gjw/viewform?usp=publish-editor",
+    registerLink: "https://forms.gle/YOUR_FORM_1",
   },
   {
     title: "Phantom X",
@@ -42,7 +42,7 @@ const events = [
       "All teams must play every round",
     ],
     whatsappLink: "https://chat.whatsapp.com/EPcxuxfa85wCCBjFre2b8z",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=publish-editor",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=sharing&ouid=110837675426105465754",
   },
 ];
 
@@ -80,12 +80,15 @@ const EventCard = ({ event, index }) => {
                 className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
-            {/* BADGE AT THE TOP OF THE IMAGE */}
-              <div className="absolute inset-x-0 top-0 flex justify-center pt-4 bg-gradient-to-b from-black/60 to-transparent pb-10">
-                <span className="animate-pulse text-white text-[10px] font-bold uppercase tracking-[0.2em] bg-red-600/50 px-4 py-2 rounded-full border border-red-500 shadow-[0_0_15px_rgba(229,9,20,0.6)] backdrop-blur-md">
-                  Tap for Details
-                </span>
-              </div>
+            <div className="absolute inset-0 bg-black/30 flex items-end justify-center pb-6">
+
+              <span className="text-white/80 text-xs bg-cyan-500/20 px-4 py-2 rounded-full border border-cyan-500/40 backdrop-blur-md">
+
+                Tap to View Details
+
+              </span>
+
+            </div>
             <h2 className="text-2xl font-bold text-pink-300 mb-2 text-center">{event.title}</h2>
             <p className="text-gray-300 text-sm mb-4 text-center px-2 line-clamp-1">{event.description}</p>
           </div>
