@@ -119,7 +119,17 @@ export default function HomePage() {
             ">
               R.M.K. ENGINEERING COLLEGE
             </h1>
-
+            <h3
+  className="
+    mt-1
+    text-sm sm:text-base md:text-xl
+    text-white/90
+    tracking-wider
+    head-title
+  "
+>
+  An Autonomous College
+</h3>
             <h2 className="
               max-w-full px-3
               text-sm sm:text-base md:text-xl

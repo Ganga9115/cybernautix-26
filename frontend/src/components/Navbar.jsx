@@ -54,7 +54,7 @@ export default function Navbar() {
           px-8 py-2
           shadow-[0_0_40px_rgba(124,124,255,0.15)]
         "
-      >
+      > 
         {/* Glow Effect */}
         <motion.div
           className="absolute w-20 h-20 rounded-full bg-[#7C7CFF]/20 blur-2xl pointer-events-none"
@@ -68,7 +68,7 @@ export default function Navbar() {
               to={item.path}
               className={({ isActive }) =>
                 `relative px-2 py-2 font-mono text-sm font-bold tracking-widest transition-all duration-300
-                ${isActive ? "text-[#7C7CFF]" : "text-white/60 hover:text-white"}`
+                ${isActive ? "text-[#ec4899]" : "text-white"}`
               }
             >
               {({ isActive }) => (
@@ -77,7 +77,7 @@ export default function Navbar() {
                   {isActive && (
                     <motion.div
                       layoutId="nav-signal"
-                      className="absolute left-0 right-0 -bottom-1 h-[2.5px] bg-gradient-to-r from-transparent via-[#7C7CFF] to-transparent shadow-[0_0_12px_rgba(124,124,255,1)]"
+                      className="absolute left-0 right-0 -bottom-1 h-[2.5px] bg-gradient-to-r from-transparent via-[#ec4899] to-transparent shadow-[0_0_12px_rgba(124,124,255,1)]"
                     />
                   )}
                 </>

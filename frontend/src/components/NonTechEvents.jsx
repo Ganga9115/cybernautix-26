@@ -29,7 +29,7 @@ const events = [
       "Letters, numbers & symbols prohibited",
     ],
     whatsappLink: "https://chat.whatsapp.com/YOUR_LINK_1",
-    registerLink: "https://forms.gle/YOUR_FORM_1",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm4wDjxBld-oeOCCdWrEj094oVpMhY7PbDjZ8-zsrdfk7Gjw/viewform?usp=publish-editor",
   },
   {
     title: "Phantom X",
@@ -42,7 +42,7 @@ const events = [
       "All teams must play every round",
     ],
     whatsappLink: "https://chat.whatsapp.com/EPcxuxfa85wCCBjFre2b8z",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=sharing&ouid=110837675426105465754",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=publish-editor",
   },
 ];
 
