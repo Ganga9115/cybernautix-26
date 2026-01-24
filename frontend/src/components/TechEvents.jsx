@@ -93,7 +93,7 @@ const EventCard = ({ event, index }) => {
     >
       {/* MOBILE VIEW: FLIP CARD */}
       <div 
-        className="block md:hidden relative w-[85vw] h-[48vh] [perspective:1000px]"
+        className="block md:hidden relative w-[85vw] h-[52vh] [perspective:1000px]"
         onClick={() => setFlipped(!flipped)}
       >
         <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${flipped ? '[transform:rotateY(180deg)]' : ''}`}>
@@ -141,7 +141,7 @@ const EventCard = ({ event, index }) => {
       </div>
 
       {/* DESKTOP VIEW: ORIGINAL STATIC CARD */}
-      <div className={`hidden md:flex flex-col bg-black/60 w-[42vw] ${index < 2 ? "h-[120vh]" : "h-[110vh]"} rounded-2xl overflow-hidden backdrop-blur-xl transition-transform duration-500 hover:scale-[1.01]`}>
+      <div className={`hidden md:flex flex-col bg-black/60 w-[42vw] ${index < 2 ? "h-[120vh]" : "h-[110vh]"} rounded-2xl overflow-hidden bg-black/90 transition-transform duration-500 hover:scale-[1.01]`}>
         <div className="overflow-hidden h-[60vh]">
           <img
             src={event.image}
@@ -189,9 +189,9 @@ const TechEvents = () => {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden text-white pt-[4vh]">
       {/* GALAXY BACKGROUND */}
-      <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-        <Galaxy mouseRepulsion density={0.8} speed={0.5} />
-      </div>
+      {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
+        <Galaxy mouseRepulsion density={0.5} speed={0.3} />
+      </div> */}
 
       {/* TOP NAV */}
       <div className="fixed top-0 left-0 right-0 z-50">
@@ -212,7 +212,7 @@ const TechEvents = () => {
           <EncryptedText
             text="Technical Events"
             encryptedClassName="text-3xl sm:text-4xl md:text-6xl text-[#22d3ee] opacity-80"
-            revealedClassName="text-3xl sm:text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#0891b2]"
+            revealedClassName="text-3xl sm:text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#67e8f9] via-[#22d3ee] to-[#0891b2] page-title"
             revealDelayMs={55}
           />
         </div>
