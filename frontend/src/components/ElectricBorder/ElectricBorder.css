@@ -4,6 +4,7 @@
   border-radius: inherit;
   overflow: visible;
   isolation: isolate;
+  margin-bottom: 7vh;
 }
 
 .eb-canvas-container {

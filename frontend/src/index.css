@@ -38,7 +38,7 @@
   }
 
   .mobileNavItem.active {
-    color: #7C7CFF;
+    color: #ec4899;
     transform: translateY(-8px);
     z-index: 10;
   }
@@ -50,8 +50,8 @@
     left: 25%;
     right: 25%;
     height: 3px;
-    background: #7C7CFF;
-    box-shadow: 0 0 15px rgba(124, 124, 255, 1);
+    background:#ec4899;
+    box-shadow: 0 0 15px rgba(236, 72, 153, 1);
     border-radius: 10px;
   }
 

@@ -1,5 +1,5 @@
 import DotGrid from "./DotGrid/DotGrid";
-import rmkIcon from "../assets/rmk.png";
+import rmkIcon from "../assets/rmk.webp";
 import EncryptedText from "../components/ui/EncryptedText";
 
 const SplashScreen = () => {

@@ -11,10 +11,10 @@ const AnimatedItem = ({ children, delay = 0 }) => (
     {children}
   </div>
 );
-import tedx from "../assets/TechTactics.png";
-import paperpresentation from "../assets/PaperMania.png";
-import hackathon from "../assets/HackVerse.png";
-import promptStudio from "../assets/PromptStudio.png";
+import tedx from "../assets/TechTactics.webp";
+import paperpresentation from "../assets/PaperMania.webp";
+import hackathon from "../assets/HackVerse.webp";
+import promptStudio from "../assets/PromptStudio.webp";
 
 const events = [
   {
@@ -36,10 +36,10 @@ const events = [
     image: paperpresentation,
     description: "Innovate to create impactful ideas. Research • Present to inspire innovation.",
     rules: [
-      "UG & PG students (1–3 members)",
-      "5–8 minutes presentation + Q&A",
-      "PDF only, one laptop per team",
-      "Abstract submission mandatory",
+      "Participation is individual or in teams of up to three",
+      "Original papers only; abstract submission mandatory and PDF format required.",
+      "Presentation: 5–7 minutes, followed by Q&A; one laptop per team.",
+      "Professional conduct is mandatory; judges’ and organizers’ decisions are final.",
     ],
     whatsappLink: "https://chat.whatsapp.com/K8rFXRHTTT7BNQlgPZi1La",
     pptLink: "https://docs.google.com/presentation/d/1Cwz6uFiVPeGHak_boVa-ebHxXirOVNz2GpGyzGLZnKU/edit?usp=sharing",
@@ -64,9 +64,9 @@ const events = [
     description: "Where AI becomes your director and imagination writes the script.",
     rules: [
       "Team size: 1–2 members",
-      "Prompt engineering based",
-      "Theme revealed on spot",
-      "Creativity matters most",
+      "Create an AI-generated movie trailer based on the assigned genre.",
+      "Only free AI tools are permitted; paid tools are prohibited",
+      "Content must be original and suitable for an academic environment",
     ],
     whatsappLink: "https://chat.whatsapp.com/GPwV6JVmaKyCEvCzGdacGw",
     registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdBkKe2Jc9V01m5Q-SxC9pW4W2z3rfXl-ZdxCcko-AdNl9lbA/viewform?usp=header",
@@ -93,7 +93,7 @@ const EventCard = ({ event, index }) => {
     >
       {/* MOBILE VIEW: FLIP CARD */}
       <div 
-        className="block md:hidden relative w-[85vw] h-[44vh] [perspective:1000px]"
+        className="block md:hidden relative w-[85vw] h-[48vh] [perspective:1000px]"
         onClick={() => setFlipped(!flipped)}
       >
         <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${flipped ? '[transform:rotateY(180deg)]' : ''}`}>

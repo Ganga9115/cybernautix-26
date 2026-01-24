@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Galaxy from "../components/GalaxyAnimation/Galaxy";
-import person from "../assets/person.png";
+
 
 export default function HomePage() {
   const navigate = useNavigate();

@@ -14,8 +14,8 @@ const AnimatedItem = ({ children, delay = 0 }) => (
   </div>
 );
 
-import nontech1img from "../assets/HawkinsDimension.png";
-import nontech2img from "../assets/PhantomX.png";
+import nontech1img from "../assets/HawkinsDimension.webp";
+import nontech2img from "../assets/PhantomX.webp";
 
 const events = [
   {
@@ -29,7 +29,7 @@ const events = [
       "Letters, numbers & symbols prohibited",
     ],
     whatsappLink: "https://chat.whatsapp.com/YOUR_LINK_1",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm4wDjxBld-oeOCCdWrEj094oVpMhY7PbDjZ8-zsrdfk7Gjw/viewform?usp=publish-editor",
+    registerLink: "https://forms.gle/YOUR_FORM_1",
   },
   {
     title: "Phantom X",
@@ -42,7 +42,7 @@ const events = [
       "All teams must play every round",
     ],
     whatsappLink: "https://chat.whatsapp.com/EPcxuxfa85wCCBjFre2b8z",
-    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=publish-editor",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLScPZm3D6jl_9QQi3OIXYfihzgLsVpLdICznA0HkziC_wAMBzA/viewform?usp=sharing&ouid=110837675426105465754",
   },
 ];
 
@@ -81,9 +81,13 @@ const EventCard = ({ event, index }) => {
               />
             </div>
             <div className="absolute inset-0 bg-black/30 flex items-end justify-center pb-6">
-              <span className="text-white/80 text-xs bg-pink-500/20 px-4 py-2 rounded-full border border-pink-500/40 backdrop-blur-md">
+
+              <span className="text-white/80 text-xs bg-cyan-500/20 px-4 py-2 rounded-full border border-cyan-500/40 backdrop-blur-md">
+
                 Tap to View Details
+
               </span>
+
             </div>
             <h2 className="text-2xl font-bold text-pink-300 mb-2 text-center">{event.title}</h2>
             <p className="text-gray-300 text-sm mb-4 text-center px-2 line-clamp-1">{event.description}</p>

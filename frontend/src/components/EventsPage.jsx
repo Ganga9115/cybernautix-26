@@ -64,7 +64,7 @@ const EventsPage = () => {
           <div
             onClick={() => navigate("/non-tech")}
             className="cursor-pointer group bg-black/50 rounded-2xl p-10 backdrop-blur-xl
-            transition duration-500 hover:scale-[1.02] z-50"
+            transition duration-500 hover:scale-[1.02] z-50 pb-10"
           >
             <h2 className="text-3xl page-title font-bold text-pink-400 mb-4">
               Non-Technical Events
