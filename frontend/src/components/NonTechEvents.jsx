@@ -29,7 +29,7 @@ const events = [
       "Letters, numbers & symbols prohibited",
     ],
     whatsappLink: "https://chat.whatsapp.com/YOUR_LINK_1",
-    registerLink: "https://forms.gle/YOUR_FORM_1",
+    registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm4wDjxBld-oeOCCdWrEj094oVpMhY7PbDjZ8-zsrdfk7Gjw/viewform?usp=publish-editor",
   },
   {
     title: "Phantom X",
