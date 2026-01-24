@@ -26,14 +26,9 @@ export default function EventTimeline() {
   ];
 
   return (
-    <div
-      className="min-h-screen relative overflow-hidden text-white font-sans"
-      style={{
-        background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
-      }}
-    >
+    <div className="min-h-screen relative overflow-x-hidden bg-transparent">
       {/* Galaxy Background */}
-      <div className="absolute inset-0 z-0 opacity-60">
+      {/* <div className="absolute inset-0 z-0 opacity-60">
         <Galaxy
           density={0.8}
           glowIntensity={0.4}
@@ -44,7 +39,7 @@ export default function EventTimeline() {
           starSpeed={0.3}
           speed={0.5}
         />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-5 md:py-20">

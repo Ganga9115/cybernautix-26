@@ -116,10 +116,10 @@ export default function BusRoutesPage() {
   ]
 
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)" }}>
-      <div className="absolute inset-0 z-5 w-full h-full opacity-60">
+   <div className="min-h-screen relative overflow-x-hidden bg-transparent">
+      {/* <div className="absolute inset-0 z-5 w-full h-full opacity-60">
         <Galaxy density={0.8} glowIntensity={0.4} saturation={0.5} hueShift={200} twinkleIntensity={0.2} rotationSpeed={0.05} repulsionStrength={1.5} autoCenterRepulsion={0} starSpeed={0.3} speed={0.5} />
-      </div>
+      </div> */}
 
       <div className="max-w-6xl mx-auto px-4 py-5 md:py-20 relative z-10">
         <div className="mb-8 text-center">

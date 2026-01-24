@@ -159,7 +159,7 @@ const NonTechEvents = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden text-white pt-[4vh]">
+    <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[4vh]">
       {/* BACKGROUND */}
       {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
         <Galaxy
@@ -184,7 +184,7 @@ const NonTechEvents = () => {
       </div>
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
+      <div className="relative z-5 max-w-7xl mx-auto px-4 py-16">
         {/* TITLE */}
         <div className="flex flex-col items-center justify-center mt-12 mb-10"> 
           <TypewriterEffectSmooth words={nonTechWords} className="justify-center" cursorClassName="bg-[#ff7ad9]" /> 
