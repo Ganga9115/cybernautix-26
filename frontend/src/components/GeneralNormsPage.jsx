@@ -25,9 +25,11 @@ export default function GeneralNormsPage() {
     "Usage of mobile phones inside the campus should be avoided.",
     "Confirmation mail will be sent to your registered email ID.",
     "Participants can come by RMK college bus or by public transport.",
-    "Boys must come in formal manner.",
+    "Boys must come in formal manner. Jeans and T-shirts is strictly prohibited.",
     "Girls should wear formal dress.",
     "No on-spot registration is allowed.",
+    "Participants must be only from the 33 colleges mentioned in the Google Form",
+    
   ];
 
   return (
