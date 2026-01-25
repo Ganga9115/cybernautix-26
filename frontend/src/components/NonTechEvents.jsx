@@ -66,32 +66,36 @@ const EventCard = ({ event, index }) => {
     >
       {/* MOBILE VIEW: FLIP CARD */}
       <div 
-        className="block md:hidden relative w-[85vw] h-[50vh] [perspective:1000px]"
+        className="block md:hidden relative w-[85vw] h-[52vh] [perspective:1000px]"
         onClick={() => setFlipped(!flipped)}
       >
         <div className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${flipped ? '[transform:rotateY(180deg)]' : ''}`}>
           
-          {/* FRONT: IMAGE */}
-          <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden bg-black/60">
-            <div className="relative w-full aspect-[14/9] overflow-hidden">
-              <img
-                src={event.image}
-                alt={event.title}
-                className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </div>
-            <div className="absolute inset-0 bg-black/30 flex items-end justify-center pb-6">
+         {/* FRONT: IMAGE */}
+<div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden bg-black/60 flex flex-col"> 
+  <div className="relative w-full aspect-[14/9] overflow-hidden flex-shrink-0">
+    <img
+      src={event.image}
+      alt={event.title}
+      className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
+    />
+  </div>
+  
+  {/* Content Area */}
+  <div className="p-4 flex flex-col items-center justify-center flex-grow text-center">
+    <h2 className="text-xl font-bold text-pink-300 mb-2">{event.title}</h2>
+    
+    {/* CHANGE 1: Remove 'line-clamp-1' and add 'overflow-y-auto' just in case */}
+    <p className="text-gray-300 text-sm mb-4 px-2 leading-tight">
+      {event.description}
+    </p>
 
-              <span className="text-white/80 text-xs bg-cyan-500/20 px-4 py-2 rounded-full border border-cyan-500/40 backdrop-blur-md">
-
-                Tap to View Details
-
-              </span>
-
-            </div>
-            <h2 className="text-2xl font-bold text-pink-300 mb-2 text-center">{event.title}</h2>
-            <p className="text-gray-300 text-sm mb-4 text-center px-2 line-clamp-1">{event.description}</p>
-          </div>
+    {/* CHANGE 2: Move the "Tap to View" hint inside the flow so it doesn't overlap text */}
+    <span className="text-white/60 text-[10px] bg-cyan-500/10 px-3 py-1 rounded-full border border-cyan-500/30 backdrop-blur-md mt-auto">
+      Tap to View Details
+    </span>
+  </div>
+</div>
 
           {/* BACK: DETAILS */}
           <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl bg-black/90 backdrop-blur-2xl p-6 flex flex-col overflow-y-auto">
