@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Galaxy from "../components/GalaxyAnimation/Galaxy";
+
 
 
 export default function HomePage() {
@@ -67,28 +67,9 @@ export default function HomePage() {
   }, [isDeleting]);
 
   return (
-    <div
-      className="relative w-full min-h-screen overflow-hidden"
-      style={{
-        background: "linear-gradient(to bottom, #0a0118, #1a0b2e, #0a0118)",
-      }}
-    >
+    <div className="relative w-full min-h-screen overflow-hidden bg-transparent">
       {/* ================= GALAXY BACKGROUND ================= */}
-      <div className="absolute inset-0 z-0">
-        <Galaxy
-          mouseRepulsion
-          mouseInteraction
-          density={0.8}
-          glowIntensity={0.4}
-          saturation={0.5}
-          hueShift={200}
-          twinkleIntensity={0.2}
-          rotationSpeed={0.05}
-          repulsionStrength={1.5}
-          starSpeed={0.3}
-          speed={0.5}
-        />
-      </div>
+      
 
       {/* ================= CONTENT ================= */}
       <div className="

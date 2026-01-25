@@ -22,10 +22,10 @@ const events = [
     image: hackathon,
     description: "You don’t need superpowers to be a hero. You just need an idea.",
     rules: [
-      "All team members must be present in final.",
-      "Only one entry per team is allowed.",
-      "Inter department teams allowed.",
-      "Team size - 1 to 3 members.",
+      "Team size 1-3 members",
+      "An open innovation, fast-paced hackthon",
+      "Top 20 teams will be shortlisted",
+      "A surprise event will be conducted",
     ],
     whatsappLink: "https://chat.whatsapp.com/Ba6K8MGvnDLLqD8TxvXach",
     pptLink: "https://docs.google.com/presentation/d/1Roz6f7ek7bPkuI_NLAXsbYMjtCVpavXD/edit?usp=drive_link&ouid=111340339813860627456&rtpof=true&sd=true",
@@ -187,7 +187,7 @@ const TechEvents = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden text-white pt-[4vh]">
+    <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[4vh]">
       {/* GALAXY BACKGROUND */}
       {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
         <Galaxy mouseRepulsion density={0.5} speed={0.3} />
