@@ -20,7 +20,7 @@ const EventsPage = () => {
           {/* Main Container: Reduced radius, solid background, no gradients */}
           <div className="relative px-8 py-3 bg-black/60 backdrop-blur-md border border-white/20 rounded-xl shadow-xl">
             <h2 className="text-[1.5vh] md:text-xl font-bold tracking-[0.2em] text-white page-title">
-              Registration closes on <span className="text-cyan-400">Feb 4</span>
+              Registration closes on <span className="text-cyan-400">Feb 5</span>
             </h2>
           </div>
         </div>

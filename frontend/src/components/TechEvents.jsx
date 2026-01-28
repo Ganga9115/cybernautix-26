@@ -34,7 +34,7 @@ const events = [
   {
     title: "Paper-Mania",
     image: paperpresentation,
-    description: "Innovate to create impactful ideas. Research • Present to inspire innovation.",
+    description: "A mind-heist powered by ideas, armed with knowledge, and sealed by confidence.",
     rules: [
       "Participation is individual or in teams of up to three",
       "Original papers only; abstract submission mandatory and PDF format required.",
