@@ -109,7 +109,7 @@ export default function HomePage() {
     head-title
   "
 >
-  An Autonomous College
+  (An Autonomous Institution)
 </h3>
             <h2 className="
               max-w-full px-3

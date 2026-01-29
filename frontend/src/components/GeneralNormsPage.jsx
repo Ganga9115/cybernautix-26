@@ -29,7 +29,7 @@ export default function GeneralNormsPage() {
     "Girls should wear formal dress.",
     "No on-spot registration is allowed.",
     "Participants must be only from the 33 colleges mentioned in the Google Form",
-    
+    "Breakfast and Lunch will be provided in the campus premises itself"
   ];
 
   return (
