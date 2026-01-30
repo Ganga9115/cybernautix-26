@@ -28,7 +28,7 @@ const events = [
       "Ideas expressed only through drawings",
       "Letters, numbers & symbols prohibited",
     ],
-    whatsappLink: "https://chat.whatsapp.com/YOUR_LINK_1",
+    whatsappLink: "https://chat.whatsapp.com/LN6OdXKDXKJHfy57GbawwL?mode=gi_t",
     registerLink: "https://docs.google.com/forms/d/e/1FAIpQLSdm4wDjxBld-oeOCCdWrEj094oVpMhY7PbDjZ8-zsrdfk7Gjw/viewform?usp=publish-editor",
   },
   {
