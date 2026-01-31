@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react"
 import { ChevronDown, MapPin, Clock } from "lucide-react"
 import { FaBus } from "react-icons/fa"
 import { motion, useInView, AnimatePresence } from "framer-motion"
-import Galaxy from "../components/GalaxyAnimation/Galaxy"
+import BrandHeader from "../components/BrandHeader";
 import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo"
 
 const RoutePath = ({ stopsText }) => {
@@ -120,7 +120,7 @@ export default function BusRoutesPage() {
       {/* <div className="absolute inset-0 z-5 w-full h-full opacity-60">
         <Galaxy density={0.8} glowIntensity={0.4} saturation={0.5} hueShift={200} twinkleIntensity={0.2} rotationSpeed={0.05} repulsionStrength={1.5} autoCenterRepulsion={0} starSpeed={0.3} speed={0.5} />
       </div> */}
-
+<BrandHeader />
       <div className="max-w-6xl mx-auto px-4 py-5 md:py-20 relative z-10">
         <div className="mb-8 text-center">
           <TypewriterEffectSmooth words={BusWords} className="justify-center" cursorClassName="text-[#ec4899]" />

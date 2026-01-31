@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
-import Galaxy from "./GalaxyAnimation/Galaxy"
+import BrandHeader from "../components/BrandHeader";
 import { TypewriterEffectSmooth } from "./ui/TypewriterEffectSmoothDemo"
 import emailjs from "@emailjs/browser"
 
@@ -169,7 +169,7 @@ const templateParams = {
       {/* <div className="absolute inset-0 z-0 font-sans opacity-60">
         <Galaxy density={0.8} glowIntensity={0.4} saturation={0.5} hueShift={200} twinkleIntensity={0.2} rotationSpeed={0.05} />
       </div> */}
-
+<BrandHeader />
       <div className="flex flex-col items-center  justify-center p-0">
         <div className="relative pt-5 md:pt-24 z-10 container mx-auto px-4 py-16 flex flex-col">
           <TypewriterEffectSmooth words={contactWords} className="justify-center font-sans" cursorClassName="text-pink-light" />

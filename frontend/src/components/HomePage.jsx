@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import BrandHeader from "../components/BrandHeader";
 
 
 export default function HomePage() {
@@ -67,10 +67,10 @@ export default function HomePage() {
   }, [isDeleting]);
 
   return (
-    <div className="relative w-full min-h-screen overflow-hidden bg-transparent">
+    <div className="relative w-full min-h-screen overflow-hidden bg-transparent ">
       {/* ================= GALAXY BACKGROUND ================= */}
       
-
+<BrandHeader />
       {/* ================= CONTENT ================= */}
       <div className="
         relative z-10
@@ -78,7 +78,7 @@ export default function HomePage() {
         items-center justify-center
         min-h-screen
         px-6 md:px-16
-        md:pt-0
+        md:pt-[3vh]
       ">
         {/* ================= LEFT CONTENT ================= */}
         <div className="w-full md:w-1/2 text-center">

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
-import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import rmkLogo from "../assets/rmk.webp";
+import cy from "../assets/CY.png";
 import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 
 // Animation Wrapper
@@ -163,27 +164,49 @@ const NonTechEvents = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[4vh]">
-      {/* BACKGROUND */}
-      {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-        <Galaxy
-          mouseRepulsion
-          density={0.8}
-          glowIntensity={0.4}
-          hueShift={330}
-          speed={0.5}
-        />
-      </div> */}
 
-      {/* TOP NAV */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 pt-6 flex justify-between">
-          <button onClick={() => navigate(-1)} className="px-4 py-2 rounded-full bg-black/60 border border-pink-400/40 text-pink-300 text-sm">
-            ← Back
-          </button>
-          <button onClick={() => navigate("/tech")} className="px-4 py-2 rounded-full bg-black/60 border border-pink-400/40 text-pink-300 text-sm">
-            Tech Events
-          </button>
+      <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[4vh] md:pt-[4vh]">
+      
+      {/* HEADER SECTION */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/40 border-b border-white/5">
+        <div className="w-[97vw] mx-auto px-4 sm:px-6 pt-2">
+          
+          {/* TOP BAR: Logo and Brand - HIDDEN ON MOBILE, FLEX ON LAPTOP (lg) */}
+          <div className="hidden lg:flex justify-between items-center py-3 border-b border-white/10 ">
+            <div className="flex items-center">
+              <img 
+                src={rmkLogo} 
+                alt="RMK Logo" 
+                className="h-16 w-auto object-contain pl-4" 
+              />
+            </div>
+            <div className="text-right flex">
+              <img 
+                src={cy} 
+                alt="CYLogo" 
+                className="h-16 w-auto object-contain pl-4 pb-7" 
+              />
+              <h1 className="text-2xl font-black tracking-tighter text-[#22d3ee] uppercase ">
+                CYBERNAUTIX-26
+              </h1>
+            </div>
+          </div>
+
+          {/* BOTTOM BAR: Navigation Buttons - ALWAYS VISIBLE */}
+          <div className="flex justify-between items-center py-2">
+            <button 
+              onClick={() => navigate(-1)} 
+              className="px-4 py-2 rounded-full bg-black/60 border border-pink-400/40 text-pink-300 text-xs sm:text-sm hover:bg-pink-400/10 transition-colors"
+            >
+              ← Back
+            </button>
+            <button 
+              onClick={() => navigate("/tech")} 
+              className="px-4 py-2 rounded-full bg-pink-500 text-black font-bold text-xs sm:text-sm hover:bg-pink-400 transition-colors"
+            >
+              Tech Events
+            </button>
+          </div>
         </div>
       </div>
 

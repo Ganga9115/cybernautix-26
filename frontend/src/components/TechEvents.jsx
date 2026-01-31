@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
-import Galaxy from "../components/GalaxyAnimation/Galaxy";
 import EncryptedText from "../components/ui/EncryptedText";
+import rmkLogo from "../assets/rmk.webp";
+import cy from "../assets/CY.png";
+
+// Animation Wrapper
 const AnimatedItem = ({ children, delay = 0 }) => (
   <div 
     className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both"
@@ -11,18 +14,20 @@ const AnimatedItem = ({ children, delay = 0 }) => (
     {children}
   </div>
 );
+
 import tedx from "../assets/TechTactics.webp";
 import paperpresentation from "../assets/PaperMania.webp";
 import hackathon from "../assets/HackVerse.webp";
 import promptStudio from "../assets/PromptStudio.webp";
 
 const events = [
+  // ... (Your events data remains exactly the same)
   {
     title: "HackVerse : Heroes edition",
     image: hackathon,
     description: "You don’t need superpowers to be a hero. You just need an idea.",
     rules: [
-      "Team size 1-3 members",
+      "Team size 1-4 members",
       "An open innovation, fast-paced hackthon",
       "Top 20 teams will be shortlisted",
       "A surprise event will be conducted",
@@ -101,12 +106,12 @@ const EventCard = ({ event, index }) => {
           {/* FRONT: IMAGE */}
           <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden bg-black/60">
             <div className="relative w-full aspect-[14/9] overflow-hidden">
-  <img
-    src={event.image}
-    alt={event.title}
-    className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
-  />
-</div>
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-full object-contain sm:object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
             <div className="absolute inset-0 bg-black/30 flex items-end justify-center pb-6">
               <span className="text-white/80 text-xs bg-cyan-500/20 px-4 py-2 rounded-full border border-cyan-500/40 backdrop-blur-md">
                 Tap to View Details
@@ -140,7 +145,7 @@ const EventCard = ({ event, index }) => {
         </div>
       </div>
 
-      {/* DESKTOP VIEW: ORIGINAL STATIC CARD */}
+      {/* DESKTOP VIEW */}
       <div className={`hidden md:flex flex-col bg-black/60 w-[42vw] ${index < 2 ? "h-[120vh]" : "h-[110vh]"} rounded-2xl overflow-hidden bg-black/90 transition-transform duration-500 hover:scale-[1.01]`}>
         <div className="overflow-hidden h-[60vh]">
           <img
@@ -187,28 +192,56 @@ const TechEvents = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[4vh]">
-      {/* GALAXY BACKGROUND */}
-      {/* <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-        <Galaxy mouseRepulsion density={0.5} speed={0.3} />
-      </div> */}
+    /* ADJUSTED PADDING: pt-24 for mobile, pt-44 for laptop to accommodate the brand bar */
+    <div className="relative min-h-screen bg-transparent overflow-x-hidden text-white pt-[8.5vh] md:pt-[8.5vh]">
+      
+      {/* HEADER SECTION (Consistent with Non-Tech Page) */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/40 border-b border-white/5">
+        <div className="w-[97vw] mx-auto px-4 sm:px-6 pt-2">
+          
+          {/* TOP BAR: Logo and Brand - HIDDEN ON MOBILE, FLEX ON LAPTOP (lg) */}
+          <div className="hidden lg:flex justify-between items-center py-3 border-b border-white/10">
+            <div className="flex items-center">
+              <img 
+                src={rmkLogo} 
+                alt="RMK Logo" 
+                className="h-16 w-auto object-contain pl-4" 
+              />
+            </div>
+            <div className="text-right flex ">
+              <img 
+                src={cy} 
+                alt="CY Logo" 
+                className="h-16 w-auto object-contain pl-4 pb-7" 
+              />
+              <h1 className="text-2xl font-black tracking-tighter text-[#22d3ee] uppercase">
+                CYBERNAUTIX-26
+              </h1>
+            </div>
+          </div>
 
-      {/* TOP NAV */}
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 pt-6 flex justify-between">
-          <button onClick={() => navigate(-1)} className="px-4 py-2 rounded-full bg-black/60 border border-cyan-400/40 text-cyan-300 text-sm">
-            ← Back
-          </button>
-          <button onClick={() => navigate("/non-tech")} className="px-4 py-2 rounded-full bg-black/60 border border-cyan-400/40 text-cyan-300 text-sm">
-            Non-Tech Events
-          </button>
+          {/* BOTTOM BAR: Navigation Buttons - ALWAYS VISIBLE */}
+          <div className="flex justify-between items-center py-2">
+            <button 
+              onClick={() => navigate(-1)} 
+              className="px-4 py-2 rounded-full bg-black/60 border border-cyan-400/40 text-cyan-300 text-xs sm:text-sm hover:bg-cyan-400/10 transition-colors"
+            >
+              ← Back
+            </button>
+            <button 
+              onClick={() => navigate("/non-tech")} 
+              className="px-4 py-2 rounded-full bg-cyan-500 text-black font-bold text-xs sm:text-sm hover:bg-cyan-400 transition-colors"
+            >
+              Non-Tech Events
+            </button>
+          </div>
         </div>
       </div>
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
         {/* TITLE */}
-        <div className="flex justify-center mt-12 mb-10">
+        <div className="flex justify-center mt-6 mb-10">
           <EncryptedText
             text="Technical Events"
             encryptedClassName="text-3xl sm:text-4xl md:text-6xl text-[#22d3ee] opacity-80"
@@ -228,47 +261,34 @@ const TechEvents = () => {
           </div>
 
           {/* IMPORTANT NOTES SECTION */}
-<AnimatedItem delay={0.05}>
-  <div className="mt-6 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
-    <div className="flex items-center justify-center font-sans flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-cyan-500/5 border border-white/10 px-6 md:px-10 py-8 backdrop-blur-sm">
-      
-      {/* Heading */}
-      <div className="flex items-center font-sans gap-3 mb-6">
-        <h3 className="text-2xl md:text-3xl font-bold text-[#22d3ee]">
-          Important Notes
-        </h3>
-      </div>
-
-      {/* Notes Grid */}
-      <div className="grid grid-cols-1 gap-4 w-full">
-        {notes.map((note, i) => (
-          <AnimatedItem key={i} delay={0.1 * (i + 1)}>
-            <div className="flex items-center w-full gap-4 rounded-xl bg-white/5 border border-cyan-400/20 px-6 py-4 hover:bg-white/10 transition-all duration-300">
-              {/* Glowing Bullet Point */}
-              <div className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
-              
-              <p className="text-sm md:text-base text-gray-200 font-medium leading-relaxed">
-                {note}
-              </p>
+          <AnimatedItem delay={0.05}>
+            <div className="mt-6 flex justify-center relative w-full font-sans rounded-2xl p-[2px] overflow-hidden">
+              <div className="flex items-center justify-center font-sans flex-col max-w-fit relative rounded-2xl bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-cyan-500/5 border border-white/10 px-6 md:px-10 py-8 backdrop-blur-sm">
+                <div className="flex items-center font-sans gap-3 mb-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-[#22d3ee]">Important Notes</h3>
+                </div>
+                <div className="grid grid-cols-1 gap-4 w-full">
+                  {notes.map((note, i) => (
+                    <AnimatedItem key={i} delay={0.1 * (i + 1)}>
+                      <div className="flex items-center w-full gap-4 rounded-xl bg-white/5 border border-cyan-400/20 px-6 py-4 hover:bg-white/10 transition-all duration-300">
+                        <div className="flex-shrink-0 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.8)]" />
+                        <p className="text-sm md:text-base text-gray-200 font-medium leading-relaxed">{note}</p>
+                      </div>
+                    </AnimatedItem>
+                  ))}
+                </div>
+              </div>
             </div>
           </AnimatedItem>
-        ))}
-      </div>
-    </div>
-  </div>
-</AnimatedItem>
         </div>
 
         {/* CARDS GRID */}
         <div className="flex flex-col gap-12 md:gap-[10vh] items-center">
-          {/* ROW 1 */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-[6vw] justify-center">
             {events.slice(0, 2).map((event, index) => (
               <EventCard key={index} event={event} index={index} />
             ))}
           </div>
-
-          {/* ROW 2 */}
           <div className="flex flex-col md:flex-row gap-8 md:gap-[6vw] justify-center">
             {events.slice(2, 4).map((event, index) => (
               <EventCard key={index + 2} event={event} index={index + 2} />

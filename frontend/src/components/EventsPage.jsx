@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import ElectricBorder from "./ElectricBorder/ElectricBorder";
-
+import BrandHeader from "../components/BrandHeader";
 
 const EventsPage = () => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const EventsPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden bg-transparent">
       
       {/* GALAXY BACKGROUND */}
-     
+     <BrandHeader />
 
       {/* ================= REGISTRATION TEXT (UPDATED) ================= */}
       <div className="relative z-50 mb-10 text-center">

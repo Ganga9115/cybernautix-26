@@ -1,5 +1,5 @@
-import React from "react";
-import Galaxy from "../components/GalaxyAnimation/Galaxy";
+
+import BrandHeader from "../components/BrandHeader";
 import { useNavigate } from "react-router-dom";
 import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 
@@ -40,7 +40,7 @@ export default function EventTimeline() {
           speed={0.5}
         />
       </div> */}
-
+<BrandHeader />
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 py-5 md:py-20">
         <TypewriterEffectSmooth

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Galaxy from "../components/GalaxyAnimation/Galaxy";
+import BrandHeader from "../components/BrandHeader";
 import { TypewriterEffectSmooth } from "../components/ui/TypewriterEffectSmoothDemo";
 import { AnimatedList } from "../components/AnimatedList";
 
@@ -47,7 +47,7 @@ export default function GeneralNormsPage() {
           speed={0.5}
         />
       </div> */}
-
+<BrandHeader />
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 pb-28 pt-5 md:pt-24">
         {/* Heading - Now Responsive */}
